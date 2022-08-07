@@ -11,7 +11,11 @@ actix-web = "4.0.1"
 actix-web-lab = "0.16.1"
 actix-cors = "0.6"
 async-graphql = { version = "4.0.6", features = ["apollo_tracing"] }
+<<<<<<< HEAD
 async-graphql-actix-web = "4.0.6"
+=======
+async-graphql-actix-web = "3.0.38"
+>>>>>>> f2c526b3a4242b370dd30a19b3f07bf8ee0035a9
 env_logger = "0.9"
 log = "0.4"
 slab = "0.4.2"
