@@ -1,4 +1,4 @@
 .env
 /target
 Cargo.lock
-/template
+template/*
