@@ -3,6 +3,7 @@ import React, { useLayoutEffect } from 'react'
 import {useNavigation} from '@react-navigation/native'
 import UserAddress from '../components/UserAddress'
 import Categories from '../components/Categories'
+import RecommendedFood from '../components/RecommendedFood'
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -26,13 +27,25 @@ const HomeScreen = () => {
       <View className="border-y border-gray-300/80 my-4 rounded"/>
       
       {/* Categories */}
-      <View className="mt-6">
-          <View className="justify-between items-baseline flex-row">
-            <Text className="text-2xl font-medium relative bottom-1">Categories</Text>
-            <Text className="text-sm font-medium text-red-400">Show All</Text>
+      <View className="mt-6 space-y-10">
+        <View>
+          <View className="justify-between items-end flex-row">
+              <Text className="text-2xl font-medium relative ">Categories</Text>
+              <Text className="text-sm font-medium text-red-400">Show All</Text>
+          </View>
+          <Categories />
         </View>
-        <Categories />
+        
+        <View>    
+          <View className="justify-between items-end flex-row">
+              <Text className="text-2xl font-medium relative">Recommended Around You</Text>
+              <Text className="text-sm font-medium text-red-400">Show All</Text>
+          </View>
+          <RecommendedFood />
+        </View>
+
       </View>
+      {/* Recommended Around You */}
     </SafeAreaView>
   )
 }

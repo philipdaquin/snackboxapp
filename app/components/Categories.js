@@ -11,7 +11,7 @@ const Categories = () => {
     return (
         <ScrollView 
             contentContainerStyle={{
-                paddingTop: 10 
+                paddingTop: 15
             }}
             horizontal 
             showsHorizontalScrollIndicator={false}>
