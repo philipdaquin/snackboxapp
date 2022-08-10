@@ -13,7 +13,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <TailwindProvider>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+              cardStyle: {
+                  backgroundColor: '#00000'
+              }
+          }}
+        >
           <Stack.Screen name ="Home" component={HomeScreen}/>
         </Stack.Navigator>
       </TailwindProvider>
