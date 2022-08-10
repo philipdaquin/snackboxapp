@@ -1,0 +1,11 @@
+@import url('../assets/fonts/HelveticaNowDisplay-Bold');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-helvetica { 
+    font-family: "helvetica";
+    src: url('../assets/fonts/HelveticaNowDisplay-Bold')
+}

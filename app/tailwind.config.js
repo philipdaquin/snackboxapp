@@ -8,7 +8,7 @@ module.exports = {
     theme: {
       extend: {
         fontFamily: {
-          // 'helvetica': ['HelveticaNowDisplay', 'Bold'] 
+          body: ['HelveticaNowDisplay']
         },
       },
     },
