@@ -37,7 +37,10 @@ const SigninScreen = () => {
             <Text className="mt-2 flex-row-reverse font-medium text-right text-base">Forgot Password?</Text>
             
             {/* Login Button  */}
-            <TouchableOpacity className="bg-black items-center rounded-xl p-5 mt-24">
+            <TouchableOpacity 
+                // Temporary login to root 
+                onPress={() => {navigation.navigate("Home")}}
+                className="bg-black items-center rounded-xl p-5 mt-24">
                 <Text className="text-white text-lg font-bold ">Login</Text>
             </TouchableOpacity>
             
