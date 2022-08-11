@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { TailwindProvider } from 'tailwindcss-react-native';
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import Navigation from './Navigation/Navigation';
+import RestaurantProfile from './screens/RestaurantProfile';
+import FoodScreen from './screens/FoodScreen';
+import BottomTab from './Navigation/BottomTab';
 
 
 const Stack = createNativeStackNavigator();
@@ -13,17 +16,9 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
+      <StatusBar style='auto'/>
       <TailwindProvider>
-        <Stack.Navigator
-          screenOptions={{
-              cardStyle: {
-                  backgroundColor: '#00000'
-              }
-          }}
-        >
-          <Stack.Screen name ="Home" component={HomeScreen}/>
-        {/* <Navigation /> */}
-        </Stack.Navigator>
+        <Navigation />
       </TailwindProvider>
     </NavigationContainer>
 
