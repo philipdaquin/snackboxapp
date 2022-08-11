@@ -3,12 +3,22 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
 import {HomeIcon, SearchIcon, NewspaperIcon, UserIcon, TagIcon} from 'react-native-heroicons/outline'
+// import {HomeIcon, SearchIcon, NewspaperIcon, UserIcon, TagIcon} from 'react-native-heroicons/solid'
 import DealsScreen from '../screens/DealsScreen';
 import OrderScreen from '../screens/OrderScreen';
 import AccountScreen from '../screens/AccountScreen';
 import SearchScreen from '../screens/SearchScreen';
-const Tab = createBottomTabNavigator();
 
+import {
+  HomeIcon as HomeFocus, 
+  SearchIcon as SearchFocus, 
+  NewspaperIcon as NewspaperFocus, 
+  UserIcon as UserFocus, 
+  TagIcon as TagFocus
+} from 'react-native-heroicons/solid'
+
+
+const Tab = createBottomTabNavigator();
 
 const BottomTab = () => {
   return (
@@ -20,7 +30,6 @@ const BottomTab = () => {
         tabBarInactiveTintColor: 'black',
         tabBarIconStyle: {
             padding: 14,
-            
         },
         tabBarLabelStyle: { 
             fontSize: 13,
@@ -36,20 +45,52 @@ const BottomTab = () => {
         
     }}>
       <Tab.Screen name="Home" component={HomeScreen} options={{
-        tabBarIcon: () => (<HomeIcon size={35} strokeWidth={1.5} color={"#000"} />   )
-      }} />
+        tabBarIcon: ({focused}) => (
+            focused ? (
+              <HomeFocus size={35} strokeWidth={1.5} color={"#000"} />
+
+            ) : (
+              <HomeIcon size={35} strokeWidth={1.5} color={"#000"} />
+            ) 
+          )
+      }} /> 
       <Tab.Screen name="Search" component={SearchScreen} options={{
-        tabBarIcon: () => (<SearchIcon size={35} strokeWidth={1.5} color={"#000"} />   )
+        tabBarIcon: ({focused}) => (
+            focused ? (
+              <SearchFocus size={35} strokeWidth={1.5} color={"#000"} />
+            ) : (
+              <SearchIcon size={35} strokeWidth={1.5} color={"#000"} />
+
+            )
+          )
       }} />
       <Tab.Screen name="Orders" component={OrderScreen} options={{
-        tabBarIcon: () => (<NewspaperIcon size={35} strokeWidth={1.5} color={"#000"} />   )
+        tabBarIcon: ({focused}) => (
+          focused ? (
+            <NewspaperFocus size={35} strokeWidth={1.5} color={"#000"} />   
+          ) : (
+            <NewspaperIcon size={35} strokeWidth={1.5} color={"#000"} />   
+          )
+        )
       }} />
       <Tab.Screen name="Today" component={DealsScreen} options={{
-        tabBarIcon: () => (<TagIcon size={35} strokeWidth={1.5} color={"#000"} />   )
+        tabBarIcon: ({focused}) => (
+            focused ? (
+              <TagFocus size={35} strokeWidth={1.5} color={"#000"} />   
+            ): (
+              <TagIcon size={35} strokeWidth={1.5} color={"#000"} />   
+            ) 
+          )
       }} />
       
       <Tab.Screen name="Accounts" component={AccountScreen} options={{
-        tabBarIcon: () => (<UserIcon size={35} strokeWidth={1.5} color={"#000"} />   )
+        tabBarIcon: ({focused}) => (
+            focused ? (
+              <UserFocus size={35} strokeWidth={1.5} color={"#000"} />   
+            ): ( 
+              <UserIcon size={35} strokeWidth={1.5} color={"#000"} />   
+            )
+          )
       }} />
     </Tab.Navigator>
   )
