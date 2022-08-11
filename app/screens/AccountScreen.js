@@ -3,8 +3,8 @@ import React from 'react'
 import { ChevronRightIcon } from 'react-native-heroicons/outline' 
 const AccountScreen = () => {
   return (
-    // <ScrollView>
-      <SafeAreaView className="bg-white pt-16 px-4 pb-44">
+    <ScrollView>
+      <SafeAreaView className="bg-white pt-16 px-4  pb-[200px]">
         
         {/* Header */}
         <View>
@@ -77,7 +77,7 @@ const AccountScreen = () => {
         </TouchableOpacity>
        
       </SafeAreaView>
-    // </ScrollView>
+    </ScrollView>
   )
 }
 
