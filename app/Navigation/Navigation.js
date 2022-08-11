@@ -5,6 +5,7 @@ import RestaurantProfile from '../screens/RestaurantProfile';
 import FoodScreen from '../screens/FoodScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomTab from './BottomTab';
+import SigninScreen from '../screens/SigninScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -26,6 +27,11 @@ const Navigation = () => {
       />
       {/* Food Page */}
       <Stack.Screen name="FoodStack" component={FoodScreen}
+        options={{
+          presentation: "fullScreenModal", headerShown: false
+        }}
+      />
+      <Stack.Screen name="Signin" component={SigninScreen}
         options={{
           presentation: "fullScreenModal", headerShown: false
         }}

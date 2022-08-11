@@ -1,7 +1,12 @@
 import { View, Text, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ChevronRightIcon } from 'react-native-heroicons/outline' 
+import { useNavigation } from '@react-navigation/native'
+
+
 const AccountScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView className="bg-white min-h-screen">
       <SafeAreaView className="pt-16 px-4  pb-[200px]">
@@ -90,7 +95,9 @@ const AccountScreen = () => {
         </View>
 
 
-        <TouchableOpacity className="w-full py-2 rounded-md items-center bg-[#d9d9d9] mt-5 ">
+        <TouchableOpacity 
+          onPress={() => {navigation.navigate("Signin")}}
+          className="w-full py-2 rounded-md items-center bg-[#d9d9d9] mt-5 ">
           <Text className="text-xl font-medium">Log Out</Text>
         </TouchableOpacity>
        
