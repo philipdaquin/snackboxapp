@@ -1,7 +1,11 @@
 import { View, Text, Image, TextInput, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 const SigninScreen = () => {
+
+  const navigation = useNavigation()
+
   return (
     <ScrollView className="bg-white min-h-white">
         <SafeAreaView className="px-4">
@@ -40,7 +44,9 @@ const SigninScreen = () => {
             <View className="mt-14">
                 <Text className="text-gray-400 font-normal text-sm text-center">
                     Don't have an account? 
-                    <Text className="font-medium text-sm text-blue-500 underline"> Sign Up Here</Text>
+                    <Text className="font-medium text-sm text-blue-500 underline"
+                        onPress={() => {navigation.navigate("Signup")}}
+                    > Sign Up Here</Text>
                 </Text> 
                 <View className="mt-5 flex flex-row items-center justify-center space-x-2 ">
                     <View className="border-b border-gray-300/80 flex-grow"/>
