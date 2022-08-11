@@ -23,53 +23,71 @@ const AccountScreen = () => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity className="border-y border-gray-300/80 mt-4 pt-3 pb-4">
-          <Text className="text-left text-xl font-medium">
-            Payment Methods
-          </Text>
-        </TouchableOpacity>
+        <View className="border-y border-gray-300/80 mt-4 pt-3 pb-4">
+          <TouchableOpacity>
+            <Text className="text-left text-xl font-medium">
+              Payment Methods
+            </Text>
+          </TouchableOpacity>
+        </View>
         {/* Css Note:  Border Bottom only  */}
-        <TouchableOpacity className="border-b border-gray-300/80 pt-3 pb-4">
-          <Text className="text-left text-xl font-medium">
-            Address
-          </Text>
-        </TouchableOpacity>
+        <View className="border-b border-gray-300/80 pt-3 pb-4">
+          <TouchableOpacity>
+            <Text className="text-left text-xl font-medium">
+              Address
+            </Text>
+          </TouchableOpacity>
+        </View>
        
-        <TouchableOpacity className="border-b border-gray-300/80 pt-3 pb-4">
-          <Text className="text-left text-xl font-medium">
-            My Voucher
-          </Text>
-        </TouchableOpacity>
+        <View className="border-b border-gray-300/80 pt-3 pb-4">
+          <TouchableOpacity>
+            <Text className="text-left text-xl font-medium">
+              My Voucher
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity className="border-b border-gray-300/80 pt-3 pb-4">
-          <Text className="text-left text-xl font-medium">
-            Notification
-          </Text>
-        </TouchableOpacity>
+        <View className="border-b border-gray-300/80 pt-3 pb-4">
+          <TouchableOpacity>
+            <Text className="text-left text-xl font-medium">
+              Notification
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity className="border-b border-gray-300/80 pt-3 pb-4">
-          <Text className="text-left text-xl font-medium">
-            Language
-          </Text>
-        </TouchableOpacity>
+        <View className="border-b border-gray-300/80 pt-3 pb-4">
+
+          <TouchableOpacity>
+            <Text className="text-left text-xl font-medium">
+              Language
+            </Text>
+          </TouchableOpacity>
+        </View>
        
-        <TouchableOpacity className="border-b border-gray-300/80 pt-3 pb-4">
-          <Text className="text-left text-xl font-medium">
-            Settings
-          </Text>
-        </TouchableOpacity>
+        <View className="border-b border-gray-300/80 pt-3 pb-4">
+          <TouchableOpacity>
+            <Text className="text-left text-xl font-medium">
+              Settings
+            </Text>
+
+          </TouchableOpacity>
+        </View>
        
-        <TouchableOpacity className="border-b border-gray-300/80 pt-3 pb-4">
-          <Text className="text-left text-xl font-medium">
-            Invite Friends
-          </Text>
-        </TouchableOpacity>
+        <View className="border-b border-gray-300/80 pt-3 pb-4">
+          <TouchableOpacity>
+            <Text className="text-left text-xl font-medium">
+              Invite Friends
+            </Text>
+          </TouchableOpacity>
+        </View>
        
-        <TouchableOpacity className="border-b border-gray-300/80 pt-3 pb-4">
-          <Text className="text-left text-xl font-medium">
-            Support
-          </Text>
-        </TouchableOpacity>
+        <View className="border-b border-gray-300/80 pt-3 pb-4">
+          <TouchableOpacity className="">
+            <Text className="text-left text-xl font-medium">
+              Support
+            </Text>
+          </TouchableOpacity>
+        </View>
 
 
         <TouchableOpacity className="w-full py-2 rounded-md items-center bg-[#d9d9d9] mt-5 ">
