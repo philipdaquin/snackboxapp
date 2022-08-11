@@ -3,8 +3,8 @@ import React from 'react'
 import { ChevronRightIcon } from 'react-native-heroicons/outline' 
 const AccountScreen = () => {
   return (
-    <ScrollView>
-      <SafeAreaView className="bg-white pt-16 px-4  pb-[200px]">
+    <ScrollView className="bg-white min-h-screen">
+      <SafeAreaView className="pt-16 px-4  pb-[200px]">
         
         {/* Header */}
         <View>

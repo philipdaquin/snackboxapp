@@ -19,8 +19,8 @@ const HomeScreen = () => {
 
   return (
 
-    <ScrollView >
-      <SafeAreaView className="bg-white px-4 pt-16">
+    <ScrollView className="bg-white min-h-screen">
+      <SafeAreaView className="px-4 pt-16">
           {/* User Address bar */}
           <View className="">
             <UserAddress />

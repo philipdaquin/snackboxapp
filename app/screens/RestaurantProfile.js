@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 
 const RestaurantProfile = () => {
   return (
-    <View>
+    <ScrollView className="bg-white min-h-screen">
       <Text>RestaurantProfile</Text>
-    </View>
+    </ScrollView>
   )
 }
 

@@ -6,8 +6,8 @@ import DiscoverCard from '../components/DiscoverCard'
 
 const SearchScreen = () => {
   return (
-    <ScrollView>
-      <SafeAreaView className="bg-white pt-16 px-4">
+    <ScrollView className="bg-white min-h-screen">
+      <SafeAreaView className="pt-16 px-4">
         {/* Heading  Search*/}
         <View>
           <Text className="font-medium text-left text-3xl">Search</Text>
