@@ -18,7 +18,9 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style='auto'/>
       <TailwindProvider>
+
         <Navigation />
+        
       </TailwindProvider>
     </NavigationContainer>
 
