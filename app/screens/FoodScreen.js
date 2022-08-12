@@ -1,28 +1,31 @@
-import { View, Text, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
 import React from 'react'
 import { StarIcon, MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/solid'
 import BackButton from '../components/BackButton'
 import LikeButton from '../components/LikeButton'
+import AddOn from '../components/AddOn'
 
 
 
 const FoodScreen = () => {
   return (
-    <ScrollView className="bg-white min-h-screen">
+    
+    <ScrollView className="bg-white min-h-screen pb-24">
       <View className="h-[412px] bg-[#d9d9d9]] px-4">
         {/* Backbutton */}
         <View className="mt-12">
           <BackButton />
+
         </View>
-        {/* Like Button */}
-        <View>
+        <View className="absolute bottom-1 right-1 mb-7 mr-6">
+          <LikeButton />
         </View>
       </View>
       <SafeAreaView className="px-4 mt-6">
 
 {/* Headers */}
         <View className="flex flex-row items-center justify-between">
-          <View className="flex flex-row items-start space-x2">
+          <View className="flex flex-row items-start space-x-2">
             <Text className="text-3xl font-medium text-left ">Chicken Nuggets</Text>
 
             <View className="
@@ -88,30 +91,45 @@ const FoodScreen = () => {
             </TouchableOpacity>
           </View>
         </View>
+{/* Frequently Bought Together */}
+        <View className="mt-9">
+          <Text className="font-medium text-lg text-left mb-5">Frequently Bought Together</Text>
+          <View className="mb-2">
 
-        <View>
-          <Text>Frequently Bought Together</Text>
-          
-          <View>
-            <View>
-            <View>
-              <View className="flex flex-row items-center mb-3 mt-3">
-              <View className="w-[46px] h-[46px] bg-[#d9d9d9] rounded-md mr-4"/>
-              <View className="">
-                  <Text className="text-left font-medium text-base">{title}</Text>
-                  <Text className="text-gray-500 font-medium text-xs">From {restaurant_name}</Text>
-              </View>
-              {/* Price */}
-              <View className="absolute right-1 flex items-center justify-center w-[70px] h-[28px] rounded-lg bg-[#c8c8c8]">
-                  <Text className="text-center font-bold">${price}</Text>
-              </View>
-              </View>
-              <View className="absolute right-0 bottom-1 w-[85%] h-7 border-b border-gray-300/80 "/>
-          </View>
-            </View>
+            <AddOn title={"Steam Jasmine Rice"} price={"$4.5"} />
+            <AddOn title={"Coca Cola"} price={"$2.5"} />
+            <AddOn title={"Sweet Potato"} price={"$10.5"} />
+            <AddOn title={"Cheese"} price={"$1.5"} />
+
           </View>
         </View>
 
+{/* Additional Request  */}
+        <View className="mt-3 space-y-3">
+            <Text className="font-medium text-lg text-left">Additional Request</Text>
+            
+            <View className="mt-2  h-[100px] bg-[#f3f3f3] rounded-2xl font-medium ">
+              <TextInput 
+                style={
+                  {
+                    outlineStyle: 'none'
+                  }
+                }
+                underlineColorAndroid={'transparent'}
+                caretHidden={true}
+                textAlign='left'
+                textBreakStrategy='balanced'
+                multiline={true}
+                className="rounded-2xl mr-4 ml-4 mt-3 font-normal text-sm flex flex-grow "
+                placeholder='Add special Request Here!'/>
+            </View>
+        </View>
+
+
+          {/* Footer */}
+        <View className=" flex flex-col-reverse justify-center items-center mt-32">
+            <Text className="text-sm text-gray-400 font-medium">That's it!</Text>
+        </View>
       </SafeAreaView>
     </ScrollView>
   )
