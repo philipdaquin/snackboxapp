@@ -14,10 +14,34 @@ const RecommendedFood = () => {
       horizontal 
       showsHorizontalScrollIndicator={false}
     >
-      <RecommendedCard />
-      <RecommendedCard />
-      <RecommendedCard />
-      <RecommendedCard />
+      <RecommendedCard 
+        id={1} 
+        name="Cheeseburger" 
+        avg_person={"2"} 
+        delivery={"Free Delivery"} 
+        avg_waiting={"10 - 15"} 
+        restaurant_name={"Mcdonald's"}/>
+      <RecommendedCard 
+        id={2} 
+        name="Cheeseburger" 
+        avg_person={"2"} 
+        delivery={"Free Delivery"} 
+        avg_waiting={"10 - 15"} 
+        restaurant_name={"Mcdonald's"}/>
+      <RecommendedCard 
+        id={3} 
+        name="Cheeseburger" 
+        avg_person={"2"} 
+        delivery={"Free Delivery"} 
+        avg_waiting={"10 - 15"} 
+        restaurant_name={"Mcdonald's"}/>
+      <RecommendedCard 
+        id={4} 
+        name="Cheeseburger" 
+        avg_person={"2"} 
+        delivery={"Free Delivery"} 
+        avg_waiting={"10 - 15"} 
+        restaurant_name={"Mcdonald's"}/>
     </ScrollView>
   )
 }
