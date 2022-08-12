@@ -16,6 +16,11 @@ const SearchScreen = () => {
               <View className="flex-row space-x-2 flex-1 bg-gray-200 px-3 py-1 items-center rounded-xl">
                   <SearchIcon color="gray" size={25}/>
                   <TextInput 
+                      style={
+                        {
+                          outlineStyle: 'none'
+                        }
+                      }
                       placeholder="Search Restaurant's Menu" 
                       className="w-[100%] py-3  rounded-sm text-lg font-medium outline-none border-none "
                   />

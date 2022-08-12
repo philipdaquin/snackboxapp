@@ -19,6 +19,11 @@ const SigninScreen = () => {
                     <Text className="text-left font-bold text-lg">Email</Text>
                     <View className="bg-[#d9d9d9] p-1 rounded-lg">
                         <TextInput 
+                            style={
+                                {
+                                outlineStyle: 'none'
+                                }
+                            }
                             placeholder="Email" 
                             className="ml-2 w-[80%] py-3  rounded-sm text-sm font-medium outline-none border-none "
                         />
@@ -28,6 +33,11 @@ const SigninScreen = () => {
                     <Text className="text-left font-bold text-lg">Password</Text>
                     <View className="bg-[#d9d9d9] p-1 rounded-lg ">
                         <TextInput 
+                            style={
+                                {
+                                outlineStyle: 'none'
+                                }
+                            }
                             placeholder="Password" 
                             className="ml-2 w-[80%] py-3  rounded-sm text-sm font-medium outline-none border-none "
                         />
