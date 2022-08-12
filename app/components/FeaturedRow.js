@@ -5,7 +5,7 @@ import RestaurantCard from './RestaurantCard'
 
 const FeaturedRow = ({id, title}) => {
   
-  const restaurant_list = []
+    
   return (
 
     <View className="mb-9">
