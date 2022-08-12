@@ -40,7 +40,18 @@ const BottomTab = () => {
         tabBarStyle: {
             backgroundColor: 'white',
             marginRight: 3,
-            height: 84
+            height: 84,
+            shadowColor: "black",
+            shadowOpacity: 90,
+            shadowOffset: {
+              width: 0,
+              height: 20,
+              
+            },
+          elevation: 24,
+          shadowRadius: 42,
+          setOffset: -8
+          
         }
         
     }}>
