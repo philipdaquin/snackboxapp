@@ -18,14 +18,6 @@ const Navigation = () => {
       <Stack.Screen name ="Root" component={BottomTab} 
         options={{ presentation: "fullScreenModal", headerShown: false }}
       />
-      {/* Restaurant Page */}
-
-      
-      <Stack.Screen name ="RestaurantStack" component={RestaurantProfile}
-        options={{
-          presentation: "fullScreenModal", headerShown: false
-        }}
-      />
       {/* Food Page */}
       <Stack.Screen name="FoodStack" component={FoodScreen}
         options={{
@@ -42,7 +34,13 @@ const Navigation = () => {
           presentation: "fullScreenModal", headerShown: false
         }}
       />
-
+        {/* Restaurant Page */}
+        <Stack.Screen name ="RestaurantStack" 
+          component={RestaurantProfile}
+          options={{
+            presentation: "fullScreenModal", headerShown: false
+          }}
+        />
 
       
     </Stack.Navigator>

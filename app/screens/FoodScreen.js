@@ -5,10 +5,11 @@ import BackButton from '../components/BackButton'
 import LikeButton from '../components/LikeButton'
 import AddOn from '../components/AddOn'
 import AddToCart from '../components/AddToCart'
-
+import { useNavigation } from '@react-navigation/native'
 
 
 const FoodScreen = () => {
+  const navigation = useNavigation()
   return (
     <>
       <AddToCart />
@@ -45,9 +46,11 @@ const FoodScreen = () => {
             <Text className="text-sm font-medium ">See all reviews</Text>
           </View>
           
-          <Text className="relative bottom-3 text-left text-xl font-medium text-[#575757]">
-            From Mcdonald's
-          </Text>
+          <TouchableOpacity onPress={() => {navigation.navigate("RestaurantStack")} }>
+            <Text className="relative bottom-3 text-left text-xl font-medium text-[#575757]">
+              From Mcdonald's
+            </Text>
+          </TouchableOpacity>
 
   {/* Price */}
           <View className="flex flex-row justify-between mt-2">
