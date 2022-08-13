@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomTab from './BottomTab';
 import SigninScreen from '../screens/SigninScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import BasketScreen from '../screens/BasketScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +30,11 @@ const Navigation = () => {
           presentation: "fullScreenModal", headerShown: false
         }}
       />
+      <Stack.Screen name="Basket" component={BasketScreen}
+        options={{
+          presentation: "fullScreenModal", headerShown: false
+        }}
+      />
       <Stack.Screen name="Signup" component={SignUpScreen}
         options={{
           presentation: "fullScreenModal", headerShown: false
@@ -40,11 +46,10 @@ const Navigation = () => {
           options={{
             presentation: "fullScreenModal", headerShown: false
           }}
+         
         />
-
-      
+   
     </Stack.Navigator>
-    
   )
 }
 

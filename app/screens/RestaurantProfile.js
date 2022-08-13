@@ -11,6 +11,8 @@ import FilterCard from '../components/FilterCard'
 import Menu from '../components/Menu'
 import BackButton from '../components/BackButton'
 import { useRoute } from '@react-navigation/native'
+import BasketIcon from '../components/BasketIcon'
+import TempNavigation from '../components/TempNavigation'
 
 
 const RestaurantProfile = (
@@ -32,6 +34,8 @@ const RestaurantProfile = (
 
 
   return (
+    <> 
+     
     <ScrollView className="bg-white min-h-screen ">
 {/* Thumbnail */}
         <View className="h-[311px] bg-[#d9d9d9]">
@@ -134,6 +138,12 @@ const RestaurantProfile = (
 
       </SafeAreaView>
     </ScrollView>
+      
+    <View className="relative bottom-[84px]">
+      <BasketIcon />
+    </View>
+    <TempNavigation />
+    </>
   )
 }
 

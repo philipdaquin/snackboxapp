@@ -27,6 +27,7 @@ const FoodScreen = () => {
 
 const items = useSelector(state => select_basket_item_with_id(state, id));
   const [pressed, setPressed] = useState(false);
+
   const dispatch = useDispatch();
   const add_item_to_basket = () => { 
     dispatch(add_to_basket({
@@ -112,14 +113,17 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
             </View>
 
             <View className="flex flex-row space-x-4 items-center">
-              <TouchableOpacity onPress={remove_item_basket}>
-                <MinusCircleIcon size={45} color={"#aeaeae"}/>
+              <TouchableOpacity 
+                disabled={items.length === 0 }
+                onPress={remove_item_basket}>
+                <MinusCircleIcon size={45} color={
+                  items.length > 0 ? "#5887FF" : "#aeaeae" }/>
               </TouchableOpacity>
               <Text className="font-medium text-2xl">{items.length}</Text>
               <TouchableOpacity onPress={add_item_to_basket}>
                 <PlusCircleIcon 
                   size={45} 
-                  color={"#aeaeae"}/>
+                  color={"#55DF8E"}/>
               </TouchableOpacity>            
             </View>
           </View>

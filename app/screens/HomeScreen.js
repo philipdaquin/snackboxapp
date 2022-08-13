@@ -6,6 +6,7 @@ import Categories from '../components/Categories'
 import RecommendedFood from '../components/RecommendedFood'
 import FeaturedRow from '../components/FeaturedRow'
 import FeatureProducts from '../components/FeatureProducts'
+import BasketIcon from '../components/BasketIcon'
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -18,6 +19,8 @@ const HomeScreen = () => {
   })
 
   return (
+    <>
+    <BasketIcon />
 
     <ScrollView className="bg-white min-h-screen">
       <SafeAreaView className="px-4 pt-16">
@@ -59,6 +62,8 @@ const HomeScreen = () => {
           </View>
       </SafeAreaView>
     </ScrollView>
+    </>
+
   )
 }
 

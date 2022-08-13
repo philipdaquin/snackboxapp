@@ -23,7 +23,7 @@ const Tab = createBottomTabNavigator();
 const BottomTab = () => {
   return (
     <Tab.Navigator 
-    initialRouteNames= "Home"
+    initialRouteName= 'Home'
     screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: 'black',
