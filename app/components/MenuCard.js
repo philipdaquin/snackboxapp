@@ -1,9 +1,15 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+
+
 
 const MenuCard = () => {
+  const navigation = useNavigation()
   return (
-    <View className="flex flex-row justify-between mb-6 items-end">
+    <TouchableOpacity 
+      onPress={() => navigation.navigate("FoodStack")}
+      className="flex flex-row justify-between mb-6 items-end">
         <View className="space-y-1">
 {/* Name of the item */}
             <Text className="font-medium text-lg text-left mb-3">Poke With Chicken</Text>
@@ -12,7 +18,7 @@ const MenuCard = () => {
               <View className="px-2 py-1 rounded-lg bg-[#d9d9d9] flex flex-row justify-center ">
                 <Text className="font-bold items-center text-sm">$46.99</Text>
               </View>
-              {/* Free Delivery */}
+{/* Free Delivery */}
               <View className="flex items-center justify-center px-2 h-[23px] bg-[#c8c8c8] rounded-lg">
                 <Text className="text-white font-bold text-sm">Free Delivery</Text>
               </View>
@@ -24,7 +30,7 @@ const MenuCard = () => {
         <View className="rounded-lg p-10 bg-[#d9d9d9]">
 {/* <Image/>  */}
         </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 

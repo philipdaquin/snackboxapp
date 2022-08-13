@@ -98,7 +98,7 @@ const RestaurantProfile = () => {
 {/* Category card  */}
           <TouchableOpacity className="fkex flex-row space-x-1 bg-[#c8c8c8] rounded-xl items-center mr-2 px-2">
             <Text className="text-sm font-medium text-left">Categories</Text>
-            <ChevronDownIcon size={20} strokeWidth={2}/>
+            <ChevronDownIcon height={20} width={10} strokeWidth={4}/>
           </TouchableOpacity>
           
 {/* Filter Cards  */}

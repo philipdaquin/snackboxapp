@@ -8,6 +8,8 @@ import Navigation from './Navigation/Navigation';
 import RestaurantProfile from './screens/RestaurantProfile';
 import FoodScreen from './screens/FoodScreen';
 import BottomTab from './Navigation/BottomTab';
+import { Provider } from 'react-redux';
+import store from './store';
 
 
 const Stack = createNativeStackNavigator();
@@ -16,12 +18,14 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar style='auto'/>
-      <TailwindProvider>
+      <Provider store={store}>
+        <StatusBar style='auto'/>
+          <TailwindProvider>
 
-        <Navigation />
-        
-      </TailwindProvider>
+            <Navigation />
+            
+          </TailwindProvider>
+      </Provider>
     </NavigationContainer>
 
   );
