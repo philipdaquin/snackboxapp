@@ -11,12 +11,40 @@ const Menu = () => {
       </View>
       
       <View className="mt-2">
-        <MenuCard />
-        <MenuCard />
-        <MenuCard />
-        <MenuCard />
-        <MenuCard />
-
+        <MenuCard 
+          id={1} 
+          name="Sample Menu Item" 
+          description="Sample Description"
+          avg_person={"2"} 
+          delivery={"Free Delivery"} 
+          avg_waiting={"10 - 15"} 
+          restaurant_name={"Mcdonald's"}
+          image={""}
+          price={"4.49"}
+        />
+        <MenuCard 
+          id={1} 
+          name="Sample Menu Item" 
+          description="Sample Description"
+          avg_person={"2"} 
+          delivery={"Free Delivery"} 
+          avg_waiting={"10 - 15"} 
+          restaurant_name={"Mcdonald's"}
+          image={""}
+          price={"4.49"}
+        />
+        <MenuCard 
+          id={1} 
+          name="Sample Menu Item" 
+          description="Sample Description"
+          avg_person={"2"} 
+          delivery={"Free Delivery"} 
+          avg_waiting={"10 - 15"} 
+          restaurant_name={"Mcdonald's"}
+          image={""}
+          price={"4.49"}
+        />
+      
       </View>
     </View>
   )

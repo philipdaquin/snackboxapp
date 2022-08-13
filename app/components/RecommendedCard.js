@@ -8,19 +8,31 @@ import { useNavigation } from '@react-navigation/native'
 
 // THe params will mostly change , for now the priority is to build the ui and 
 // fix the data sets later
-const RecommendedCard = ({id, name, avg_person, delivery, avg_waiting, restaurant_name}) => {
+const RecommendedCard = ({  id,
+  name,
+  description,
+  avg_person,
+  delivery,
+  avg_waiting,
+  restaurant_name,
+  image,
+  price,}) => {
   const navigation = useNavigation();
   const [liked, setLiked] = useState(false)
 
   return (
+    // Passing this parameters into FoodStack
     <TouchableOpacity 
       onPress={() => {navigation.navigate("FoodStack", {
-        id, 
-        name, 
-        avg_person, 
-        delivery, 
-        avg_waiting, 
-        restaurant_name
+        id,
+        name,
+        description,
+        avg_person,
+        delivery,
+        avg_waiting,
+        restaurant_name,
+        image,
+        price,
       })}}
       className="w-[281px] h-[179px] bg-black/10  rounded-2xl mr-4">
       {/* Waiting time widget */}
