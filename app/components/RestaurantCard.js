@@ -4,11 +4,33 @@ import { HeartIcon, ClockIcon, StarIcon } from 'react-native-heroicons/solid'
 import { UserIcon } from 'react-native-heroicons/outline'
 import {useNavigation} from '@react-navigation/native'
 
-const RestaurantCard = ({avg_waiting, name, avg_person, ratings, total_reviews, delivery_price}) => {
+const RestaurantCard = ({
+    id,
+    avg_waiting, 
+    name, 
+    short_description,
+    avg_person, 
+    ratings, 
+    total_reviews, 
+    delivery_price,
+    address,
+    thumbnail
+}) => {
     const navigation = useNavigation();
     return (
         <TouchableOpacity 
-            onPress={() => navigation.navigate("RestaurantStack")}
+            onPress={() => navigation.navigate("RestaurantStack", {
+                id,
+                avg_waiting, 
+                name, 
+                short_description,
+                avg_person, 
+                ratings, 
+                total_reviews, 
+                delivery_price,
+                address,
+                thumbnail
+            })}
             className="w-[281px] h-[179px] bg-black/10  rounded-2xl mr-4">
             {/* Waiting time widget */}
             <View className="

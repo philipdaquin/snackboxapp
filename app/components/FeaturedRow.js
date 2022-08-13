@@ -23,59 +23,66 @@ const FeaturedRow = ({id, title}) => {
         >
             <View className="flex-row">
                 <RestaurantCard 
-                    avg_waiting={"10 - 15"}
-                    name={"Restaurant Name"}
-                    avg_person={"1"}
+                    id={1}
+                    avg_waiting={"10 - 15min"} 
+                    name={"Nando's"}
+                    short_description={"Chicken, Sauce, Pork"}
+                    avg_person={"2"} 
                     ratings={"5.0"}
-                    total_reviews={100}
-
+                    total_reviews={"100"}
                     delivery_price={"Free Delivery"}
+                    address={"Nandos UK"}
+                    thumbnail={""}
                 />                
                 <RestaurantCard 
-                    avg_waiting={"10 - 15"}
-                    name={"Restaurant Name"}
-                    avg_person={"1"}
+                    id={1}
+                    avg_waiting={"10 - 15min"} 
+                    name={"Nando's"}
+                    short_description={"Chicken, Sauce, Pork"}
+                    avg_person={"2"} 
                     ratings={"5.0"}
-                    total_reviews={100}
-
+                    total_reviews={"100"}
                     delivery_price={"Free Delivery"}
+                    address={"Nandos UK"}
+                    thumbnail={""}
                 />                
                 <RestaurantCard 
-                    avg_waiting={"10 - 15"}
-                    name={"Restaurant Name"}
-                    
-                    avg_person={"1"}
+                    id={1}
+                    avg_waiting={"10 - 15min"} 
+                    name={"Nando's"}
+                    short_description={"Chicken, Sauce, Pork"}
+                    avg_person={"2"} 
                     ratings={"5.0"}
-                    total_reviews={100}
-
+                    total_reviews={"100"}
                     delivery_price={"Free Delivery"}
+                    address={"Nandos UK"}
+                    thumbnail={""}
                 />                
                 <RestaurantCard 
-                    avg_waiting={"10 - 15"}
-                    name={"Restaurant Name"}
-                    avg_person={"1"}
+                    id={1}
+                    avg_waiting={"10 - 15min"} 
+                    name={"Nando's"}
+                    short_description={"Chicken, Sauce, Pork"}
+                    avg_person={"2"} 
                     ratings={"5.0"}
-                    total_reviews={100}
+                    total_reviews={"100"}
                     delivery_price={"Free Delivery"}
+                    address={"Nandos UK"}
+                    thumbnail={""}
                 />                
                 <RestaurantCard 
-                    avg_waiting={"10 - 15"}
-                    name={"Restaurant Name"}
-                    avg_person={"1"}
+                    id={1}
+                    avg_waiting={"10 - 15min"} 
+                    name={"Nando's"}
+                    short_description={"Chicken, Sauce, Pork"}
+                    avg_person={"2"} 
                     ratings={"5.0"}
-                    total_reviews={100}
-
+                    total_reviews={"100"}
                     delivery_price={"Free Delivery"}
+                    address={"Nandos UK"}
+                    thumbnail={""}
                 />                
-                <RestaurantCard 
-                    avg_waiting={"10 - 15"}
-                    name={"Restaurant Name"}
-                    avg_person={"1"}
-                    ratings={"5.0"}
-                    total_reviews={100}
-
-                    delivery_price={"Free Delivery"}
-                />                
+                           
             </View>
         </ScrollView>
     </View>

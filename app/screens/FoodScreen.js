@@ -85,7 +85,20 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
             <Text className="text-sm font-medium ">See all reviews</Text>
           </View>
           
-          <TouchableOpacity onPress={() => {navigation.navigate("RestaurantStack")} }>
+
+{/* Sample Data linking to Restaurant  */}
+          <TouchableOpacity onPress={() => {navigation.navigate("RestaurantStack", {
+            id: 1,
+            avg_waiting:"10 - 15min",
+            name:"Nando's",
+            short_description:"Chicken, Sauce, Pork",
+            avg_person:"2" ,
+            ratings:"5.0",
+            total_reviews:"100",
+            delivery_price:"Free Delivery",
+            address:"Nandos UK",
+            thumbnail:"",
+          })} }>
             <Text className="relative bottom-3 text-left text-xl font-medium text-[#575757]">
               From {restaurant_name}
             </Text>

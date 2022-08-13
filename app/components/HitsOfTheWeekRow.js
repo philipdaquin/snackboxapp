@@ -3,7 +3,7 @@ import React from 'react'
 import HitsOfTheWeek from './HitsOfTheWeek'
 
 
-const HitsOfTheWeekRow = () => {
+const HitsOfTheWeekRow = ({id}) => {
   return (
     <ScrollView 
         contentContainerStyle={{

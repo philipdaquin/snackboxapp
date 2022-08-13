@@ -10,9 +10,27 @@ import HitsOfTheWeekRow from '../components/HitsOfTheWeekRow'
 import FilterCard from '../components/FilterCard'
 import Menu from '../components/Menu'
 import BackButton from '../components/BackButton'
+import { useRoute } from '@react-navigation/native'
 
 
-const RestaurantProfile = () => {
+const RestaurantProfile = (
+  
+) => {
+
+  const { params: {
+    id,
+    avg_waiting, 
+    name, 
+    short_description,
+    avg_person, 
+    ratings, 
+    total_reviews, 
+    delivery_price,
+    address,
+    thumbnail
+  }} = useRoute();
+
+
   return (
     <ScrollView className="bg-white min-h-screen ">
 {/* Thumbnail */}
@@ -40,29 +58,29 @@ const RestaurantProfile = () => {
           <View className="flex flex-row space-x-4 relative bottom-2">
             <View className="space-x-1 flex flex-row items-center ">
               <TruckIcon size={22} color={"#c8c8c8"}/>
-              <Text className="text-sm font-medium text-left">Free Delivery</Text>
+              <Text className="text-sm font-medium text-left">{delivery_price}</Text>
             </View>
             <View className="space-x-1 flex flex-row items-center ">
               <ClockIcon size={22} color={"#c8c8c8"}/>
-              <Text className="text-sm font-medium text-left">10 - 15 mins</Text>
+              <Text className="text-sm font-medium text-left">{avg_waiting}</Text>
             </View>
           </View>
         </View>
 {/* Name, Rating, Address */}
         <View className="relative top-2 flex flex-row items-start">
           <View>
-            <Text className="text-3xl font-medium text-left">Restaurant Name</Text>
-            <Text className="text-sm font-normal text-gray-500 text-left">Vegan, Healthy, Breakfast, European</Text>
-            <Text className="text-lg font-medium text-gray-500 text-left mt-2">Resturant's Address</Text>
+            <Text className="text-3xl font-medium text-left">{name}</Text>
+            <Text className="text-sm font-normal text-gray-500 text-left">{short_description}</Text>
+            <Text className="text-lg font-medium text-gray-500 text-left mt-2">{}</Text>
           </View>
           <View className="
-            flex items-center 
+            flex items-start 
             justify-center relative
-            h-[26px] m-3">
+            h-[26px] top-3 right-2">
             <Text className="text-black font-bold text-[14px] items-center flex ">
-                5.0
+                {ratings}
                 <StarIcon size={18} color={"#ffc107"}/> 
-                <Text className="text-[8px] text-gray-500 font-medium">{`(100+)`}</Text>
+                <Text className="text-[8px] text-gray-500 font-medium">{`(${total_reviews}+)`}</Text>
             </Text>
           </View>
         </View>
@@ -86,7 +104,7 @@ const RestaurantProfile = () => {
 
         <Text className="text-xl font-medium text-left mt-4">Hits of the week</Text>
 {/* Hits of the WEek */}
-        <HitsOfTheWeekRow />
+        <HitsOfTheWeekRow id={id}/>
 {/* Browse Restaurant's Menu */}
         <Text className="text-xl font-medium text-left mt-9">Browse Restaurant's Menu</Text>
         

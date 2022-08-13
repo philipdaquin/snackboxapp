@@ -16,7 +16,8 @@ const RecommendedCard = ({  id,
   avg_waiting,
   restaurant_name,
   image,
-  price,}) => {
+  price,
+}) => {
   const navigation = useNavigation();
   const [liked, setLiked] = useState(false)
 
