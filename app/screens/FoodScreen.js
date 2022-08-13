@@ -5,10 +5,49 @@ import BackButton from '../components/BackButton'
 import LikeButton from '../components/LikeButton'
 import AddOn from '../components/AddOn'
 import AddToCart from '../components/AddToCart'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToBasket, add_to_basket, remove_from_basket, select_basket_item_with_id } from '../redux/basketSlice'
+import { useState } from 'react'
 
 
 const FoodScreen = () => {
+
+  const { params: {
+    id,
+    name,
+    description,
+    avg_person,
+    delivery,
+    avg_waiting,
+    restaurant_name,
+    image,
+    price,
+} } = useRoute();
+
+const items = useSelector(state => select_basket_item_with_id(state, id));
+  const [pressed, setPressed] = useState(false);
+  const dispatch = useDispatch();
+  const add_item_to_basket = () => { 
+    dispatch(add_to_basket({
+      id,
+      name,
+      description,
+      avg_person,
+      delivery,
+      avg_waiting,
+      restaurant_name,
+      image,
+      price,
+    }))
+  }
+
+  const remove_item_basket = () => { 
+    if (!items.length) return ;  
+    dispatch(remove_from_basket({ id }))
+  }
+
+
   const navigation = useNavigation()
   return (
     <>
@@ -29,7 +68,7 @@ const FoodScreen = () => {
   {/* Headers */}
           <View className="flex flex-row items-center justify-between">
             <View className="flex flex-row items-start space-x-2">
-              <Text className="text-3xl font-medium text-left ">Chicken Nuggets</Text>
+              <Text className="text-3xl font-medium text-left ">{name}</Text>
 
               <View className="
                 flex items-center 
@@ -48,32 +87,32 @@ const FoodScreen = () => {
           
           <TouchableOpacity onPress={() => {navigation.navigate("RestaurantStack")} }>
             <Text className="relative bottom-3 text-left text-xl font-medium text-[#575757]">
-              From Mcdonald's
+              From {restaurant_name}
             </Text>
           </TouchableOpacity>
 
   {/* Price */}
           <View className="flex flex-row justify-between mt-2">
             <View className="flex flex-row items-center space-x-4">
-              <Text className="font-bold text-left text-4xl">$59.00</Text>
+              <Text className="font-bold text-left text-4xl">${price}</Text>
               <Text className="text-lg flex-bold text-gray-600 line-through ">$13.00</Text>
             </View>
 
             <View className="flex flex-row space-x-4 items-center">
-              <TouchableOpacity>
+              <TouchableOpacity onPress={remove_item_basket}>
                 <MinusCircleIcon size={45} color={"#aeaeae"}/>
               </TouchableOpacity>
-
-              <Text className="font-medium text-2xl">1</Text>
-              
-              <TouchableOpacity>
-                <PlusCircleIcon size={45} color={"#aeaeae"}/>
+              <Text className="font-medium text-2xl">{items.length}</Text>
+              <TouchableOpacity onPress={add_item_to_basket}>
+                <PlusCircleIcon 
+                  size={45} 
+                  color={"#aeaeae"}/>
               </TouchableOpacity>            
             </View>
           </View>
 
           <Text className="w-[323px] mt-2 text-gray-500 font-normal">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. A impedit unde iste dolorum fuga tempora amet, velit reiciendis temporibus esse odio doloribus ea pariatur non officia numquam, modi eum consectetur!
+            {description}
           </Text>
   {/* Sizes */}
           <View className="mt-5 flex flex-row items-center justify-between">

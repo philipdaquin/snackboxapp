@@ -17,31 +17,59 @@ const RecommendedFood = () => {
       <RecommendedCard 
         id={1} 
         name="Cheeseburger" 
+        description="Sample Description"
         avg_person={"2"} 
         delivery={"Free Delivery"} 
         avg_waiting={"10 - 15"} 
-        restaurant_name={"Mcdonald's"}/>
+        restaurant_name={"Mcdonald's"}
+        image={""}
+        price={"4.49"}
+      />
       <RecommendedCard 
-        id={2} 
+        id={1} 
         name="Cheeseburger" 
+        description="Sample Description"
         avg_person={"2"} 
         delivery={"Free Delivery"} 
         avg_waiting={"10 - 15"} 
-        restaurant_name={"Mcdonald's"}/>
+        restaurant_name={"Mcdonald's"}
+        image={""}
+        price={"4.49"}
+      />
       <RecommendedCard 
-        id={3} 
+        id={1} 
         name="Cheeseburger" 
+        description="Sample Description"
         avg_person={"2"} 
         delivery={"Free Delivery"} 
         avg_waiting={"10 - 15"} 
-        restaurant_name={"Mcdonald's"}/>
+        restaurant_name={"Mcdonald's"}
+        image={""}
+        price={"4.49"}
+      />
       <RecommendedCard 
-        id={4} 
+        id={1} 
         name="Cheeseburger" 
+        description="Sample Description"
         avg_person={"2"} 
         delivery={"Free Delivery"} 
         avg_waiting={"10 - 15"} 
-        restaurant_name={"Mcdonald's"}/>
+        restaurant_name={"Mcdonald's"}
+        image={""}
+        price={"4.49"}
+      />
+      <RecommendedCard 
+        id={1} 
+        name="Cheeseburger" 
+        description="Sample Description"
+        avg_person={"2"} 
+        delivery={"Free Delivery"} 
+        avg_waiting={"10 - 15"} 
+        restaurant_name={"Mcdonald's"}
+        image={""}
+        price={"4.49"}
+      />
+      
     </ScrollView>
   )
 }
