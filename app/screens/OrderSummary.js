@@ -18,7 +18,7 @@ const OrderSummary = () => {
         <PaymentBar />
 
       <ScrollView className="bg-white min-h-white">
-        <SafeAreaView className="pt-16 px-5 pb-[70px]">
+        <SafeAreaView className="pt-16 px-5 pb-[200px]">
           <View>
             <View className="flex flex-row justify-center">
               <View className="absolute left-1">
@@ -90,7 +90,19 @@ const OrderSummary = () => {
             <Text className="text-left font-medium text-sm mt-3">Additional Requirements:</Text>
             <View className="flex py-2 justify-between flex-row rounded-lg bg-[#f3f3f3] px-2 mt-2">
               <View className="items-center flex flex-row space-x-1 relative left-1 ">
-                <TextInput placeholder='Special User Requirements' className=" text-base font-normal"/>
+              <TextInput 
+                  style={
+                    {
+                      outlineStyle: 'none'
+                    }
+                  }
+                  underlineColorAndroid={'transparent'}
+                  caretHidden={true}
+                  textAlign='left'
+                  textBreakStrategy='balanced'
+                  multiline={true}
+                  className=" h-[38px] w-[395px] flex flex-grow "
+                  placeholder='Add Special Request Here!'/>
               </View>
           </View>
           <View className="border-y border-gray-300/80 my-4 rounded"/>
@@ -141,8 +153,20 @@ const OrderSummary = () => {
           </View>
           <Text className="text-left font-bold text-sm mt-11">Additional Requirements to the driver:</Text>
             <View className="flex py-4 h-[125px] justify-between flex-row rounded-xl bg-[#f3f3f3] px-2 mt-4">
-              <View className="items-center flex flex-row space-x-1 relative left-1 ">
-                <TextInput placeholder='Special User Requirements' className=" text-base font-normal"/>
+              <View className="items-center flex flex-row space-x-1 relative  left-1 ">
+                <TextInput 
+                    style={
+                      {
+                        outlineStyle: 'none'
+                      }
+                    }
+                    underlineColorAndroid={'transparent'}
+                    caretHidden={true}
+                    textAlign='left'
+                    textBreakStrategy='balanced'
+                    multiline={true}
+                    className=" font-normal  h-[125px] w-[395px]"
+                    placeholder='Add Special Request Here!'/>
               </View>
             </View>
         </SafeAreaView>
