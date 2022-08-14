@@ -18,8 +18,9 @@ const RestaurantCard = ({
 }) => {
     const navigation = useNavigation();
     return (
+        // Testing purposes 
         <TouchableOpacity 
-            onPress={() => navigation.navigate("RestaurantStack", {
+            onPress={() => navigation.navigate("Basket", {
                 id,
                 avg_waiting, 
                 name, 

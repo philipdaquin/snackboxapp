@@ -7,7 +7,7 @@ const UserAddress = () => {
     <View className="flex flex-row">
         <LocationMarkerIcon size={20}/>
         <View className="relative bottom-5 left-1">
-          <Text className="font-bold text-gray-500 text-sm">Delivery To</Text>
+          <Text className="font-bold text-[#686868] text-sm">Delivery To</Text>
           <View className="items-center flex flex-row space-x-1">
             <Text className="font-normal text-base">
               Lorem Ipsum Street 
