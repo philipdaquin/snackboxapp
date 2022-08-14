@@ -9,6 +9,7 @@ import SigninScreen from '../screens/SigninScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import BasketScreen from '../screens/BasketScreen';
 import BottomUpPopup from '../components/BottomUpPopup';
+import OrderSummary from '../screens/OrderSummary';
 
 
 const Stack = createNativeStackNavigator();
@@ -51,6 +52,13 @@ const Navigation = () => {
         />
         <Stack.Screen name ="BottomUpPopup" 
           component={BottomUpPopup}
+          options={{
+            presentation: "transparentModal", headerShown: false
+          }}
+         
+        />
+        <Stack.Screen name ="OrderSummary" 
+          component={OrderSummary}
           options={{
             presentation: "fullScreenModal", headerShown: false
           }}

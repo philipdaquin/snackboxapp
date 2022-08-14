@@ -2,20 +2,23 @@ import { View, Text, ScrollView, SafeAreaView, TouchableOpacity, Image } from 'r
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { ChevronDownIcon, ChevronRightIcon, LocationMarkerIcon } from 'react-native-heroicons/outline'
+import { useSelector } from 'react-redux'
+import { select_basket_total } from '../redux/basketSlice'
 
 const BottomUpPopup = () => {
     const navigation = useNavigation()
-    
+    const total_basket = useSelector(select_basket_total)
+
     return (
-        <View className="bg-black/50 min-h-full">
-            <TouchableOpacity className="  min-h-[50%]" onPress={() => {navigation.goBack()}} />
+        <View className="bg-black/75 min-h-full">
+            <TouchableOpacity className="  min-h-[60%]" onPress={() => {navigation.goBack()}} />
             <View className="bg-white h-[375px] w-full absolute bottom-1 rounded-t-3xl px-4 pt-8">
                 <View className="flex flex-row justify-between">
                     <Text className="text-xl font-medium text-left">Delivery</Text>
                     <View className="flex flex-row">
                         <View className="items-center flex flex-row space-x-2">
                             <LocationMarkerIcon size={20}/>
-                            <Text className="font-normal text-base ml-1 underline-offset-1">
+                            <Text className="font-semibold text-base ml-1 underline-offset-1">
                                 Lorem Ipsum Street 
                             </Text>
                             <Text className="">
@@ -28,7 +31,7 @@ const BottomUpPopup = () => {
                 <View className="">
                     <View className="flex flex-row justify-between">
                         <Text className="text-xl font-medium text-left">Estimated total cost</Text>
-                        <Text className="text-xl font-medium text-left">$47.99</Text>
+                        <Text className="text-xl font-medium text-left">~${Math.floor(-total_basket) + Math.floor((-total_basket)/16)}</Text>
                     </View>
                     <Text className="w-[328px] text-left text-sm text-gray-600">
                         Please note that for items sold by weight, the exact 
@@ -52,7 +55,7 @@ const BottomUpPopup = () => {
                 </View>
                 <TouchableOpacity 
                     onPress={() => {
-                        navigation.navigate("Root");
+                        navigation.navigate("OrderSummary");
                     }}
                     className="bg-black items-center rounded-2xl p-5 mt-4">
                     <View className="items-center space-x-1 flex flex-row">

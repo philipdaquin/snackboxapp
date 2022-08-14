@@ -161,7 +161,7 @@ const BasketScreen = () => {
     </ScrollView>
 
 {/* Continue Button */}
-    <ConfirmationButton />
+    <ConfirmationButton/>
     </>
 
   )
