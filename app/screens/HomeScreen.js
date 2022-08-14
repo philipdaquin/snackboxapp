@@ -62,6 +62,7 @@ const HomeScreen = () => {
             <Text className="text-sm text-gray-400 font-medium">That's it!</Text>
           </View>
       </SafeAreaView>
+      <ConfirmationButton />
     </ScrollView>
     </>
 

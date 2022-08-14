@@ -13,6 +13,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import Currency from 'react-currency-formatter'
 import ConfirmationButton from '../components/ConfirmationButton'
+import Subtotal from '../components/Subtotal'
 
 
 const BasketScreen = () => {
@@ -114,49 +115,18 @@ const BasketScreen = () => {
             <Text className="text-white font-medium text-sm">Apply</Text>
           </TouchableOpacity>
         </View>
-{/* Subtotal, Discounts, Shipping Fee */}
-        <View className="space-y-2">
-          <View className="border-y border-gray-300/80 my-4 rounded"/>
-            <View className="justify-between flex flex-row">
-              <Text className="font-normal text-sm text-left text-gray-400">Subtotal</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">${Math.floor(-total_basket)}</Text>
-            </View>
-          <View>
-            <View className="justify-between flex flex-row">
-              <Text className="font-normal text-sm text-left text-gray-400">Discounts</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">${Math.floor(items[0]?.price/4)}</Text>
-            </View>
-          </View>
-          <View>
-            <View className="justify-between flex flex-row">
-              <Text className="font-normal text-sm text-left text-gray-400">Shipping Fee</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">${Math.floor(items[0]?.price/4)}</Text>
-            </View>
-          </View>
-{/* Total */}
-          <View>
-            <View className="border-y border-gray-300/80 my-4 rounded"/>
 
-              <View className="justify-between flex flex-row align-bottom">
-
-                <View className="space-x-1 items-center flex flex-row ">
-                  <Text className="font-medium text-2xl text-left">Total</Text>
-                  <Text className="text-gray-400 text-xs font-medium">(incl. VAT)</Text>
-                </View>
-
-                <View className="items-center space-x-1 flex flex-row">
-                  <Text className="text-gray-400 text-xs font-medium">({items.length} items)</Text>
-                  <Text className="font-bold text-2xl text-left"> ${
-                    Math.floor(-total_basket + 
-                    (items[0]?.price/4) + 
-                    (items[0]?.price/4))}
-                  </Text>
-                </View>
-
-              </View>
-          </View>
-        </View>
         
+        <Subtotal
+          subtotal={Math.floor(-total_basket)}
+          discount={Math.floor(items[0]?.price/4)}
+          shipping_fee={Math.floor(items[0]?.price/4)}
+          total={Math.floor(-total_basket + 
+            (items[0]?.price/4) + 
+            (items[0]?.price/4))}
+          items={items.length}
+        />
+
       </SafeAreaView>
     </ScrollView>
 

@@ -40,11 +40,11 @@ const BottomUpPopup = () => {
                 </View>
                 <View className="border-y border-gray-300/80 my-4 rounded"/>
                 <View className="flex flex-row justify-between items-center">
-                    <View className="flex flex-row space-x-1 items-center">
+                    <View className="flex flex-row space-x-3 items-center">
                         <Image source={{
                             uri: "https://cdn.freebiesupply.com/images/large/2x/apple-logo-transparent.png"
                         }}
-                        className="h-[40px] w-[40px]"/>
+                        className="h-[40px] w-[40px] mr-2"/>
                         <Text className="text-xl font-medium text-left">
                             Apple Pay
                         </Text>
