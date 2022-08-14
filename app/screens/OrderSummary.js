@@ -165,7 +165,7 @@ const OrderSummary = () => {
                     textAlign='left'
                     textBreakStrategy='balanced'
                     multiline={true}
-                    className=" font-normal  h-[125px] w-[395px]"
+                    className=" font-normal  h-[125px] w-[395px] scrollbar-hide md:scrollbar-default "
                     placeholder='Add Special Request Here!'/>
               </View>
             </View>
