@@ -24,12 +24,17 @@ export const basketSlice = createSlice({
         //  Update state 
         state.items = new_basket
 
+    },
+    remove_all_items: (state, action) => { 
+      console.log("Removing all items on the list");
+      state.items.splice(0, state.items.length)
+      state.items = []
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { add_to_basket, remove_from_basket } = basketSlice.actions
+export const { add_to_basket, remove_from_basket, remove_all_items } = basketSlice.actions
 export const select_basket_item_with_id = (state, id) => state
     .basket
     .items

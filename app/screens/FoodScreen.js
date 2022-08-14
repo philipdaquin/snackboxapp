@@ -27,20 +27,22 @@ const FoodScreen = () => {
 
 const items = useSelector(state => select_basket_item_with_id(state, id));
   const [pressed, setPressed] = useState(false);
-
+  const [quantity, setQuantity] = useState(0)
   const dispatch = useDispatch();
+ 
   const add_item_to_basket = () => { 
-    dispatch(add_to_basket({
-      id,
-      name,
-      description,
-      avg_person,
-      delivery,
-      avg_waiting,
-      restaurant_name,
-      image,
-      price,
-    }))
+      dispatch(add_to_basket({
+        id,
+        name,
+        description,
+        avg_person,
+        delivery,
+        avg_waiting,
+        restaurant_name,
+        image,
+        price,
+      }));
+  
   }
 
   const remove_item_basket = () => { 
@@ -52,7 +54,7 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
   const navigation = useNavigation()
   return (
     <>
-      <AddToCart />
+      <AddToCart id={id}/>
       <ScrollView className="bg-white min-h-screen pb-24">
         <View className="h-[412px] bg-[#d9d9d9]] px-4">
           {/* Backbutton */}
@@ -120,6 +122,7 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
                   items.length > 0 ? "#5887FF" : "#aeaeae" }/>
               </TouchableOpacity>
               <Text className="font-medium text-2xl">{items.length}</Text>
+
               <TouchableOpacity onPress={add_item_to_basket}>
                 <PlusCircleIcon 
                   size={45} 

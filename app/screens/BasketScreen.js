@@ -1,12 +1,37 @@
-import { View, Text, ScrollView, SafeAreaView, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, SafeAreaView, TextInput, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import UserAddress from '../components/UserAddress'
 import CancelButton from '../components/CancelButton'
 import CartItems from '../components/CartItems'
-import { PlusCircleIcon } from 'react-native-heroicons/solid'
+import { MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/solid'
 import { TicketIcon } from 'react-native-heroicons/outline'
+import { useNavigation } from '@react-navigation/native'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectRestaurant } from '../redux/restaurantSlice'
+import { remove_from_basket, select_basket_item, select_basket_total, remove_all_items, add_to_basket } from '../redux/basketSlice'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import Currency from 'react-currency-formatter'
+
 
 const BasketScreen = () => {
+  const navigation = useNavigation();
+  const restaurant = useSelector(selectRestaurant);
+  const items = useSelector(select_basket_item)
+  const dispatch = useDispatch()
+  const [groupItemsBasket, setGroupItemsBasket] = useState([])
+  const total_basket = useSelector(select_basket_total)
+
+  useEffect(() => { 
+    const grouped_items = items.reduce((results, items) => { 
+      (results[items.id] = results[items.id] || []).push(items);
+      return results
+    }, {} );
+    setGroupItemsBasket(grouped_items);
+  }, [items])
+
+  console.log(groupItemsBasket)
+
   return (
     <>
     <ScrollView className="bg-white min-h-screen">
@@ -25,13 +50,57 @@ const BasketScreen = () => {
         </View>
 
         <View className="flex flex-row justify-between items-baseline">
-          <Text className="text-left text-sm font-normal text-gray-500">3 Items in the Cart</Text>
-          <Text className="text-red-500 text-right text-xs font-medium relative top-1">REMOVE ALL</Text>
+          <Text className="text-left text-sm font-normal text-gray-500">{items.length} Items in the Cart</Text>
+          <TouchableOpacity
+            onPress={() => dispatch(remove_all_items(items))}
+          >
+            <Text className="text-red-500 text-right text-xs font-medium relative top-1">REMOVE ALL</Text>
+          </TouchableOpacity>
         </View>
 
 {/* Items in the cart  */}
         <View className="mt-5">
-          <CartItems/>
+          
+          {/* <CartItems/> */}
+          <ScrollView className="divide-y divide-gray-200 ">
+            {
+              Object.entries(groupItemsBasket).map(([key, items]) => ( 
+               
+                  <View key={key} className="mb-4 flex flex-row justify-between">
+                      
+                      <View className="flex flex-row space-x-3 items-center">
+                          <View className="bg-[#d9d9d9] h-[61px] w-[61px] rounded-lg ">
+                              {/* Image */}
+                          </View>
+                          
+                          <View>
+                              <Text className="font-medium text-lg text-left">{items[0]?.name}</Text>
+                              <Text className="text-sm font-medium text-gray-500 text-left">{items[0]?.price}</Text>
+                          </View>
+                      </View>
+          
+                      <View className="flex flex-row space-x-4 items-center ">
+                          <TouchableOpacity 
+                            onPress={() => dispatch(remove_from_basket({id: key}))} 
+                          >
+                              <MinusCircleIcon size={45} color={ "#aeaeae" }/>
+                          </TouchableOpacity>
+                          <Text className="font-medium text-2xl">{items.length} x</Text>
+                          <TouchableOpacity 
+                            onPress={() => dispatch(add_to_basket({id: key}))} 
+                          >
+                              <PlusCircleIcon 
+                              size={45} 
+                              color={"#55DF8E"}/>
+                          </TouchableOpacity>            
+                      </View>
+                  </View>
+                
+              ))
+            }
+        </ScrollView>
+
+
           <View className="flex flex-row items-center justify-center space-x-1 mt-6">
             <PlusCircleIcon size={20} color={"#aeaeae"}/>
             <Text className="text-xs font-medium text-gray-400">Add More Items</Text>
@@ -55,18 +124,18 @@ const BasketScreen = () => {
           <View className="border-y border-gray-300/80 my-4 rounded"/>
             <View className="justify-between flex flex-row">
               <Text className="font-normal text-sm text-left text-gray-400">Subtotal</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">$49.00</Text>
+              <Text className="font-bold text-sm text-left text-gray-600">${-total_basket}</Text>
             </View>
           <View>
             <View className="justify-between flex flex-row">
-              <Text className="font-normal text-sm text-left text-gray-400">Subtotal</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">$49.00</Text>
+              <Text className="font-normal text-sm text-left text-gray-400">Discounts</Text>
+              <Text className="font-bold text-sm text-left text-gray-600">${items[0]?.price/4}</Text>
             </View>
           </View>
           <View>
             <View className="justify-between flex flex-row">
-              <Text className="font-normal text-sm text-left text-gray-400">Subtotal</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">$49.00</Text>
+              <Text className="font-normal text-sm text-left text-gray-400">Shipping Fee</Text>
+              <Text className="font-bold text-sm text-left text-gray-600">${items[0]?.price/4}</Text>
             </View>
           </View>
 {/* Total */}
@@ -81,8 +150,12 @@ const BasketScreen = () => {
                 </View>
 
                 <View className="items-center space-x-1 flex flex-row">
-                  <Text className="text-gray-400 text-xs font-medium">(3 items)</Text>
-                  <Text className="font-bold text-2xl text-left"> $56.00</Text>
+                  <Text className="text-gray-400 text-xs font-medium">({items.length} items)</Text>
+                  <Text className="font-bold text-2xl text-left"> ${
+                    Math.floor(-total_basket + 
+                    (items[0]?.price/4) + 
+                    (items[0]?.price/4))}
+                  </Text>
                 </View>
 
               </View>

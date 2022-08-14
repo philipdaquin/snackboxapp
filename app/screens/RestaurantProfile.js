@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, SafeAreaView, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import BottomTab from '../Navigation/BottomTab'
 import {TruckIcon, ClockIcon, BadgeCheckIcon} from 'react-native-heroicons/solid'
 import { StarIcon } from 'react-native-heroicons/solid'
@@ -13,12 +13,12 @@ import BackButton from '../components/BackButton'
 import { useRoute } from '@react-navigation/native'
 import BasketIcon from '../components/BasketIcon'
 import TempNavigation from '../components/TempNavigation'
+import { useDispatch } from 'react-redux'
+import { setRestaurant } from '../redux/restaurantSlice'
 
 
-const RestaurantProfile = (
-  
-) => {
-
+const RestaurantProfile = () => {
+  const dispatch = useDispatch();
   const { params: {
     id,
     avg_waiting, 
@@ -32,6 +32,20 @@ const RestaurantProfile = (
     thumbnail
   }} = useRoute();
 
+  useEffect(() => { 
+    dispatch(setRestaurant({
+      id,
+      avg_waiting, 
+      name, 
+      short_description,
+      avg_person, 
+      ratings, 
+      total_reviews, 
+      delivery_price,
+      address,
+      thumbnail
+    }))
+  }, [dispatch])
 
   return (
     <> 
