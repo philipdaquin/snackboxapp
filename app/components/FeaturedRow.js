@@ -24,7 +24,7 @@ const FeaturedRow = ({id, title}) => {
             <View className="flex-row">
                 <RestaurantCard 
                     id={1}
-                    avg_waiting={"10 - 15min"} 
+                    avg_waiting={"10 - 15"} 
                     name={"Nando's"}
                     short_description={"Chicken, Sauce, Pork"}
                     avg_person={"2"} 
@@ -36,7 +36,7 @@ const FeaturedRow = ({id, title}) => {
                 />                
                 <RestaurantCard 
                     id={1}
-                    avg_waiting={"10 - 15min"} 
+                    avg_waiting={"10 - 15"} 
                     name={"Nando's"}
                     short_description={"Chicken, Sauce, Pork"}
                     avg_person={"2"} 
@@ -48,7 +48,7 @@ const FeaturedRow = ({id, title}) => {
                 />                
                 <RestaurantCard 
                     id={1}
-                    avg_waiting={"10 - 15min"} 
+                    avg_waiting={"10 - 15"} 
                     name={"Nando's"}
                     short_description={"Chicken, Sauce, Pork"}
                     avg_person={"2"} 
@@ -60,7 +60,7 @@ const FeaturedRow = ({id, title}) => {
                 />                
                 <RestaurantCard 
                     id={1}
-                    avg_waiting={"10 - 15min"} 
+                    avg_waiting={"10 - 15"} 
                     name={"Nando's"}
                     short_description={"Chicken, Sauce, Pork"}
                     avg_person={"2"} 
@@ -72,7 +72,7 @@ const FeaturedRow = ({id, title}) => {
                 />                
                 <RestaurantCard 
                     id={1}
-                    avg_waiting={"10 - 15min"} 
+                    avg_waiting={"10 - 15"} 
                     name={"Nando's"}
                     short_description={"Chicken, Sauce, Pork"}
                     avg_person={"2"} 

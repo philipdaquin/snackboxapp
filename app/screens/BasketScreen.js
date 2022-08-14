@@ -60,8 +60,6 @@ const BasketScreen = () => {
 
 {/* Items in the cart  */}
         <View className="mt-5">
-          
-          {/* <CartItems/> */}
           <ScrollView className="divide-y divide-gray-200 ">
             {
               Object.entries(groupItemsBasket).map(([key, items]) => ( 
@@ -78,16 +76,15 @@ const BasketScreen = () => {
                               <Text className="text-sm font-medium text-gray-500 text-left">{items[0]?.price}</Text>
                           </View>
                       </View>
-          
                       <View className="flex flex-row space-x-4 items-center ">
                           <TouchableOpacity 
-                            onPress={() => dispatch(remove_from_basket({id: key}))} 
+                            onPress={() => dispatch(remove_from_basket({id: items[0]?.id}))} 
                           >
                               <MinusCircleIcon size={45} color={ "#aeaeae" }/>
                           </TouchableOpacity>
                           <Text className="font-medium text-2xl">{items.length} x</Text>
                           <TouchableOpacity 
-                            onPress={() => dispatch(add_to_basket({id: key}))} 
+                            onPress={() => dispatch(add_to_basket(items[0]))} 
                           >
                               <PlusCircleIcon 
                               size={45} 
@@ -95,12 +92,9 @@ const BasketScreen = () => {
                           </TouchableOpacity>            
                       </View>
                   </View>
-                
               ))
             }
         </ScrollView>
-
-
           <View className="flex flex-row items-center justify-center space-x-1 mt-6">
             <PlusCircleIcon size={20} color={"#aeaeae"}/>
             <Text className="text-xs font-medium text-gray-400">Add More Items</Text>
@@ -124,18 +118,18 @@ const BasketScreen = () => {
           <View className="border-y border-gray-300/80 my-4 rounded"/>
             <View className="justify-between flex flex-row">
               <Text className="font-normal text-sm text-left text-gray-400">Subtotal</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">${-total_basket}</Text>
+              <Text className="font-bold text-sm text-left text-gray-600">${Math.floor(-total_basket)}</Text>
             </View>
           <View>
             <View className="justify-between flex flex-row">
               <Text className="font-normal text-sm text-left text-gray-400">Discounts</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">${items[0]?.price/4}</Text>
+              <Text className="font-bold text-sm text-left text-gray-600">${Math.floor(items[0]?.price/4)}</Text>
             </View>
           </View>
           <View>
             <View className="justify-between flex flex-row">
               <Text className="font-normal text-sm text-left text-gray-400">Shipping Fee</Text>
-              <Text className="font-bold text-sm text-left text-gray-600">${items[0]?.price/4}</Text>
+              <Text className="font-bold text-sm text-left text-gray-600">${Math.floor(items[0]?.price/4)}</Text>
             </View>
           </View>
 {/* Total */}

@@ -18,9 +18,10 @@ const RestaurantCard = ({
 }) => {
     const navigation = useNavigation();
     return (
-        // Testing purposes 
+
+// Testing purposes 
         <TouchableOpacity 
-            onPress={() => navigation.navigate("Basket", {
+            onPress={() => navigation.navigate("RestaurantStack", {
                 id,
                 avg_waiting, 
                 name, 
@@ -33,7 +34,7 @@ const RestaurantCard = ({
                 thumbnail
             })}
             className="w-[281px] h-[179px] bg-black/10  rounded-2xl mr-4">
-            {/* Waiting time widget */}
+{/* Waiting time widget */}
             <View className="
                 flex items-center 
                 justify-center 
@@ -48,7 +49,7 @@ const RestaurantCard = ({
                 </Text>
             </View>
             
-            {/* Good for this many persons */}
+{/* Good for this many persons */}
             <View className="absolute bottom-3 space-y-2 left-4">
                 <Text className="text-xl text-left font-bold relative bottom-1 text-white">{name}</Text>
                 <View className="flex-row space-x-4">
@@ -57,7 +58,7 @@ const RestaurantCard = ({
                         <Text className="text-white font-medium text-sm flex items-center ">
                         <ClockIcon size={16} />{avg_waiting}min</Text>
                     </View>
-                    {/* Free Delivery */}
+{/* Free Delivery */}
                     <View className="flex items-center justify-center px-2 h-[23px] bg-[#c8c8c8] rounded-lg">
                         <Text className="text-white font-medium text-sm">{delivery_price}</Text>
                     </View>

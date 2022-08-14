@@ -26,7 +26,7 @@ const RecommendedFood = () => {
         price={"4.49"}
       />
       <RecommendedCard 
-        id={1} 
+        id={2} 
         name="Cheeseburger" 
         description="Sample Description"
         avg_person={"2"} 
@@ -37,7 +37,7 @@ const RecommendedFood = () => {
         price={"4.49"}
       />
       <RecommendedCard 
-        id={1} 
+        id={3} 
         name="Cheeseburger" 
         description="Sample Description"
         avg_person={"2"} 
@@ -48,7 +48,7 @@ const RecommendedFood = () => {
         price={"4.49"}
       />
       <RecommendedCard 
-        id={1} 
+        id={4} 
         name="Cheeseburger" 
         description="Sample Description"
         avg_person={"2"} 
@@ -59,7 +59,7 @@ const RecommendedFood = () => {
         price={"4.49"}
       />
       <RecommendedCard 
-        id={1} 
+        id={5} 
         name="Cheeseburger" 
         description="Sample Description"
         avg_person={"2"} 
