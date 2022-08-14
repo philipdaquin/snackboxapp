@@ -7,6 +7,7 @@ import RecommendedFood from '../components/RecommendedFood'
 import FeaturedRow from '../components/FeaturedRow'
 import FeatureProducts from '../components/FeatureProducts'
 import BasketIcon from '../components/BasketIcon'
+import ConfirmationButton from '../components/ConfirmationButton'
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -61,6 +62,7 @@ const HomeScreen = () => {
             <Text className="text-sm text-gray-400 font-medium">That's it!</Text>
           </View>
       </SafeAreaView>
+      <ConfirmationButton />
     </ScrollView>
     </>
 

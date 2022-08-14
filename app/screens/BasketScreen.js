@@ -12,6 +12,7 @@ import { remove_from_basket, select_basket_item, select_basket_total, remove_all
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Currency from 'react-currency-formatter'
+import ConfirmationButton from '../components/ConfirmationButton'
 
 
 const BasketScreen = () => {
@@ -48,7 +49,7 @@ const BasketScreen = () => {
           <Text className="text-left font-medium text-3xl">Cart Page</Text>
           <View className="border-y border-gray-300/80 my-4 rounded"/>
         </View>
-
+        
         <View className="flex flex-row justify-between items-baseline">
           <Text className="text-left text-sm font-normal text-gray-500">{items.length} Items in the Cart</Text>
           <TouchableOpacity
@@ -155,19 +156,12 @@ const BasketScreen = () => {
               </View>
           </View>
         </View>
+        
       </SafeAreaView>
     </ScrollView>
 
 {/* Continue Button */}
-      <View className="absolute bottom-4  z-50 w-full px-4 ">
-        <TouchableOpacity 
-          className="p-5 rounded-2xl h-[64px]
-            flex flex-row justify-center items-center bg-black mt-4">
-          <View>
-            <Text className="text-white font-medium text-2xl ">Continue</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+    <ConfirmationButton />
     </>
 
   )

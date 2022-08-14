@@ -8,6 +8,7 @@ import BottomTab from './BottomTab';
 import SigninScreen from '../screens/SigninScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import BasketScreen from '../screens/BasketScreen';
+import BottomUpPopup from '../components/BottomUpPopup';
 
 
 const Stack = createNativeStackNavigator();
@@ -43,6 +44,13 @@ const Navigation = () => {
         {/* Restaurant Page */}
         <Stack.Screen name ="RestaurantStack" 
           component={RestaurantProfile}
+          options={{
+            presentation: "fullScreenModal", headerShown: false
+          }}
+         
+        />
+        <Stack.Screen name ="BottomUpPopup" 
+          component={BottomUpPopup}
           options={{
             presentation: "fullScreenModal", headerShown: false
           }}

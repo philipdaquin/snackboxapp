@@ -59,7 +59,7 @@ const RestaurantProfile = () => {
           </View>
           {/* <Image /> */}
         </View>
-      <SafeAreaView className="px-4 relative bottom-16">
+      <SafeAreaView className="px-4 relative bottom-16 pb-[200px]">
         <View className="items-end flex flex-row justify-between 
           space-x-6  ">
 {/* Profile Picture */}

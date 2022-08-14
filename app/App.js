@@ -23,7 +23,6 @@ export default function App() {
           <TailwindProvider>
 
             <Navigation />
-            
           </TailwindProvider>
       </Provider>
     </NavigationContainer>
