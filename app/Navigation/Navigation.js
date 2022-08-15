@@ -12,6 +12,10 @@ import BottomUpPopup from '../components/BottomUpPopup';
 import OrderSummary from '../screens/OrderSummary';
 import PreparingPage from '../screens/PreparingPage';
 import DeliveryState from '../screens/DeliveryState';
+import OrderConfirmed from '../screens/on_delivery_screens/OrderConfirmed';
+import DeliveryInProgress from '../screens/on_delivery_screens/DeliveryInProgress';
+import CourierOnItsWay from '../screens/on_delivery_screens/CourierOnItsWay';
+import DeliverySummary from '../screens/on_delivery_screens/DeliverySummary';
 
 
 const Stack = createNativeStackNavigator();
@@ -76,6 +80,31 @@ const Navigation = () => {
           component={DeliveryState}
           options={{
             presentation: "fullScreenModal", headerShown: false
+          }}
+        />
+        <Stack.Screen name ="OrderConfirmed" 
+          component={OrderConfirmed}
+          options={{
+            presentation: "modal", headerShown: false
+          }}
+        />
+        <Stack.Screen name ="DeliveryInProgress" 
+          component={DeliveryInProgress}
+          options={{
+            presentation: "modal", headerShown: false
+          }}
+        />
+        <Stack.Screen name ="CourierOnItsWay" 
+          component={CourierOnItsWay}
+          options={{
+            presentation: "modal", headerShown: false
+          }}
+        />
+   
+        <Stack.Screen name ="DeliverySummary" 
+          component={DeliverySummary}
+          options={{
+            presentation: "modal", headerShown: false
           }}
         />
    
