@@ -24,7 +24,10 @@ const RecommendedCard = ({  id,
   return (
     // Passing this parameters into FoodStack
     <TouchableOpacity 
-      onPress={() => {navigation.navigate("FoodStack", {
+
+
+    // 
+      onPress={() => {navigation.navigate("DeliveryState", {
         id,
         name,
         description,

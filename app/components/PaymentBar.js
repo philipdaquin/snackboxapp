@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 import {ShoppingBagIcon} from 'react-native-heroicons/outline'
 import {ChevronRightIcon, CreditCardIcon} from 'react-native-heroicons/solid'
 import Currency from 'react-currency-formatter'
+import * as Animatable from 'react-native-animatable'
 
 
 const PaymentBar = () => {
@@ -17,10 +18,12 @@ const PaymentBar = () => {
     if (items.length === 0) return null
 
   return (
-    <View 
+    <Animatable.View 
+      animation="slideInUp"
+      iterationCount={1}
       className="bottom-3 absolute w-full z-50  px-4">
       <TouchableOpacity 
-        onPress={() => {navigation.navigate("Root")}}
+        onPress={() => {navigation.navigate("PreparingPage")}}
         className="px-4 text-lg font-medium flex 
         flex-row justify-between bg-black rounded-2xl h-[64px]
       ">
@@ -43,7 +46,7 @@ const PaymentBar = () => {
           </View>
         </View>
       </TouchableOpacity>
-    </View>
+    </Animatable.View>
   )
 }
 

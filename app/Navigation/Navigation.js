@@ -10,6 +10,8 @@ import SignUpScreen from '../screens/SignUpScreen';
 import BasketScreen from '../screens/BasketScreen';
 import BottomUpPopup from '../components/BottomUpPopup';
 import OrderSummary from '../screens/OrderSummary';
+import PreparingPage from '../screens/PreparingPage';
+import DeliveryState from '../screens/DeliveryState';
 
 
 const Stack = createNativeStackNavigator();
@@ -63,6 +65,18 @@ const Navigation = () => {
             presentation: "fullScreenModal", headerShown: false
           }}
          
+        />
+        <Stack.Screen name ="PreparingPage" 
+          component={PreparingPage}
+          options={{
+            presentation: "fullScreenModal", headerShown: false
+          }}
+        />
+        <Stack.Screen name ="DeliveryState" 
+          component={DeliveryState}
+          options={{
+            presentation: "fullScreenModal", headerShown: false
+          }}
         />
    
     </Stack.Navigator>

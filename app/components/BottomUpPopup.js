@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import { ChevronDownIcon, ChevronRightIcon, LocationMarkerIcon } from 'react-native-heroicons/outline'
 import { useSelector } from 'react-redux'
 import { select_basket_total } from '../redux/basketSlice'
+import * as Animatable from 'react-native-animatable'
 
 const BottomUpPopup = () => {
     const navigation = useNavigation()
@@ -12,7 +13,10 @@ const BottomUpPopup = () => {
     return (
         <View className="bg-black/75 min-h-full">
             <TouchableOpacity className="  min-h-[60%]" onPress={() => {navigation.goBack()}} />
-            <View className="bg-white h-[375px] w-full absolute bottom-1 rounded-t-3xl px-4 pt-8">
+            <Animatable.View 
+                animation="slideInUp"
+                iterationCount={1}
+                className="bg-white h-[375px] w-full absolute bottom-1 rounded-t-3xl px-4 pt-8">
                 <View className="flex flex-row justify-between">
                     <Text className="text-xl font-medium text-left">Delivery</Text>
                     <View className="flex flex-row">
@@ -62,7 +66,7 @@ const BottomUpPopup = () => {
                         <Text className="text-white font-medium text-2xl ">Confirm Order</Text>
                     </View>
                 </TouchableOpacity>
-            </View>
+            </Animatable.View>
         </View>
         
   )

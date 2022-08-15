@@ -37,7 +37,7 @@ const BasketScreen = () => {
   return (
     <>
     <ScrollView className="bg-white min-h-screen">
-      <SafeAreaView className="pt-16 px-4 pb-[70px]">
+      <SafeAreaView className="pt-16 px-4 pb-[200px]">
         <View className="flex flex-row justify-center">
           <View className="absolute left-1">
             <CancelButton />
@@ -131,6 +131,7 @@ const BasketScreen = () => {
     </ScrollView>
 
 {/* Continue Button */}
+            
     <ConfirmationButton/>
     </>
 
