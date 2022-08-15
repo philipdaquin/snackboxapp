@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import * as Animatable from 'react-native-animatable'
 import { useNavigation } from '@react-navigation/native'
 import * as Progress from 'react-native-progress';
@@ -8,6 +8,12 @@ import * as Progress from 'react-native-progress';
 
 const DeliveryState = () => {
   const navigation = useNavigation()
+  useEffect(() => { 
+    // After couple seconds switch to the next screen 
+    setTimeout(() => { 
+        navigation.navigate("OrderConfirmed")
+    }, 5000)
+  })
   return (
     <View className="bg-black/75 min-h-full">
       <TouchableOpacity className="min-h-[60%]" onPress={() => {navigation.navigate("Root")}} />
