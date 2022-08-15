@@ -27,7 +27,7 @@ const RecommendedCard = ({  id,
 
 
     // 
-      onPress={() => {navigation.navigate("DeliveryState", {
+      onPress={() => {navigation.navigate("DeliverySummary", {
         id,
         name,
         description,
