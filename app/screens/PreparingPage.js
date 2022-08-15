@@ -8,13 +8,13 @@ const PreparingPage = () => {
     useEffect(() => { 
         // After couple seconds switch to the next screen 
         setTimeout(() => { 
-            navigation.navigate("Root")
-        }, 2000)
+            navigation.navigate("DeliveryState")
+        }, 4000)
       })
     
   return (
     <SafeAreaView
-    className="bg-white justify-center flex-1 items-center"
+      className="bg-white justify-center flex-1 items-center"
     >
       <Animatable.Image 
         source={require("../assets/loader-2_food.gif")}
