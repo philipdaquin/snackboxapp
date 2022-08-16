@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { HeartIcon, ClockIcon, StarIcon } from 'react-native-heroicons/solid'
 import { UserIcon } from 'react-native-heroicons/outline'
@@ -14,7 +14,8 @@ const RestaurantCard = ({
     total_reviews, 
     delivery_price,
     address,
-    thumbnail
+    thumbnail,
+    profile_pic
 }) => {
     const navigation = useNavigation();
     return (
@@ -31,9 +32,16 @@ const RestaurantCard = ({
                 total_reviews, 
                 delivery_price,
                 address,
-                thumbnail
+                thumbnail,
+                profile_pic
             })}
             className="w-[281px] h-[179px] bg-black/10  rounded-2xl mr-4">
+              <Image 
+                source={{
+                uri: thumbnail
+                }}
+            className="w-[281px] h-[179px] rounded-2xl"/>
+      
 {/* Waiting time widget */}
             <View className="
                 flex items-center 
@@ -54,12 +62,12 @@ const RestaurantCard = ({
                 <Text className="text-xl text-left font-bold relative bottom-1 text-white">{name}</Text>
                 <View className="flex-row space-x-4">
                     <View className="flex items-center justify-center 
-                        px-2 h-[23px] bg-[#c8c8c8] rounded-lg">
+                        px-2 h-[23px] bg-[#c8c8c8]/40 rounded-lg">
                         <Text className="text-white font-medium text-sm flex items-center ">
                         <ClockIcon size={16} />{avg_waiting}min</Text>
                     </View>
 {/* Free Delivery */}
-                    <View className="flex items-center justify-center px-2 h-[23px] bg-[#c8c8c8] rounded-lg">
+                    <View className="flex items-center justify-center px-2 h-[23px] bg-[#c8c8c8]/40 rounded-lg">
                         <Text className="text-white font-medium text-sm">{delivery_price}</Text>
                     </View>
                 </View>

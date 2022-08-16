@@ -38,6 +38,11 @@ const RecommendedCard = ({  id,
       className="w-[281px] h-[179px] bg-black/10  rounded-2xl mr-4">
       {/* Waiting time widget */}
       
+      <Image 
+        source={{
+          uri: image
+        }}
+      className="w-[281px] h-[179px] rounded-2xl"/>
       
       
       <View className="
@@ -76,13 +81,13 @@ const RecommendedCard = ({  id,
         <Text className="text-xl text-left font-bold relative bottom-1 text-white">{name}</Text>
         <View className="flex-row space-x-4">
           <View className="flex items-center justify-center 
-            px-2 h-[23px] bg-[#c8c8c8] rounded-lg">
+            px-2 h-[23px] bg-[#c8c8c8]/40 rounded-lg">
             <Text className="text-white font-medium text-sm flex items-center ">
               <UserIcon size={16} /> {avg_person} Person</Text>
           </View>
 
           {/* Free Delivery */}
-          <View className="flex items-center justify-center px-2 h-[23px] bg-[#c8c8c8] rounded-lg">
+          <View className="flex items-center justify-center px-2 h-[23px] bg-[#c8c8c8]/40 rounded-lg">
             <Text className="text-white font-medium text-sm">{delivery}</Text>
           </View>
 
