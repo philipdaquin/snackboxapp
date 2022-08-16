@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import {UserIcon, HeartIcon} from 'react-native-heroicons/solid'
 import { HeartIcon as Heart } from 'react-native-heroicons/outline'
@@ -24,9 +24,6 @@ const RecommendedCard = ({  id,
   return (
     // Passing this parameters into FoodStack
     <TouchableOpacity 
-
-
-    // 
       onPress={() => {navigation.navigate("FoodStack", {
         id,
         name,
@@ -40,6 +37,9 @@ const RecommendedCard = ({  id,
       })}}
       className="w-[281px] h-[179px] bg-black/10  rounded-2xl mr-4">
       {/* Waiting time widget */}
+      
+      
+      
       <View className="
         flex items-center 
         justify-center px-1

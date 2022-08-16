@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
 import RecommendedCard from './RecommendedCard'
 import {ScrollView} from 'react-native-web'
@@ -14,6 +14,8 @@ const RecommendedFood = () => {
       horizontal 
       showsHorizontalScrollIndicator={false}
     >
+      
+     
       <RecommendedCard 
         id={1} 
         name="Cheeseburger" 
@@ -22,7 +24,7 @@ const RecommendedFood = () => {
         delivery={"Free Delivery"} 
         avg_waiting={"10 - 15"} 
         restaurant_name={"Mcdonald's"}
-        image={""}
+        image={"../assets/recommended/recommended-1.jpg"}
         price={"4.49"}
       />
       <RecommendedCard 

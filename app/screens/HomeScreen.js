@@ -34,19 +34,19 @@ const HomeScreen = () => {
           <View className="border-y border-gray-300/80 my-4 rounded"/>
           
           {/* Categories */}
-          <View className="mt-5 space-y-10">
+          <View className="mt-5 space-y-8 ">
             <View>
               <View className="justify-between items-end flex-row">
-                  <Text className="text-xl font-medium relative ">Categories</Text>
-                  <Text className="text-sm font-medium text-red-400">Show All</Text>
+                  <Text className="text-xl font-bold text-left">Categories</Text>
+                  <Text className="text-sm font-bold text-[#f53d3d] text-left">View more</Text>
               </View>
               <Categories />
             </View>
             
-            <View>    
+            <View className="relative">    
               <View className="justify-between items-end flex-row">
-                  <Text className="text-xl font-medium relative">Recommended Around You</Text>
-                  <Text className="text-sm font-medium text-red-400">Show All</Text>
+                  <Text className="text-xl font-bold text-left">Recommended Around You</Text>
+                  <Text className="text-sm font-bold text-[#f53d3d] text-left">Show All</Text>
               </View>
               <RecommendedFood />
             </View>

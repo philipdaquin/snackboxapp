@@ -15,11 +15,11 @@ const Categories = () => {
             }}
             horizontal 
             showsHorizontalScrollIndicator={false}>
-            <CategoryCard img="" title="Burger" />
-            <CategoryCard img="" title="Coffee" />
-            <CategoryCard img="" title="Pasta" />
-            <CategoryCard img="" title="Desserts" />
-            <CategoryCard img="" title="Desserts" />
+            <CategoryCard img="🍔" title="Burger" selected={true}/>
+            <CategoryCard img="🍕" title="Pizza" selected={false}/>
+            <CategoryCard img="🍿" title="Movies" selected={false}/>
+            <CategoryCard img="🧇" title="Waffles" selected={false}/>
+            <CategoryCard img="🌭" title="American" selected={false}/>
         </ScrollView>
   )
 }

@@ -10,6 +10,8 @@ import FoodScreen from './screens/FoodScreen';
 import BottomTab from './Navigation/BottomTab';
 import { Provider } from 'react-redux';
 import store from './store';
+import * as Font from 'expo-font';
+import { AppLoading} from 'expo';
 
 
 const Stack = createNativeStackNavigator();
