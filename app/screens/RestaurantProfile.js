@@ -29,7 +29,8 @@ const RestaurantProfile = () => {
     total_reviews, 
     delivery_price,
     address,
-    thumbnail
+    thumbnail,
+    profile_pic
   }} = useRoute();
 
   useEffect(() => { 
@@ -43,7 +44,8 @@ const RestaurantProfile = () => {
       total_reviews, 
       delivery_price,
       address,
-      thumbnail
+      thumbnail,
+      profile_pic
     }))
   }, [dispatch])
 
@@ -52,24 +54,37 @@ const RestaurantProfile = () => {
      
     <ScrollView className="bg-white min-h-screen ">
 {/* Thumbnail */}
+  
         <View className="h-[311px] bg-[#d9d9d9]">
-          <View className="m-5">
-           <BackButton />
-
-          </View>
-          {/* <Image /> */}
+          <Image source={{ uri: thumbnail }}
+            className="h-[311px] "/>
+            <View className="m-5 z-50 absolute">
+              <BackButton />
+            </View>
         </View>
       <SafeAreaView className="px-4 relative bottom-16 pb-[200px]">
-        <View className="items-end flex flex-row justify-between 
+        <View className="items-end flex flex-row justify-between relative
           space-x-6  ">
 {/* Profile Picture */}
-          <View className=" 
+          <View 
+         
+            className=" 
               bg-[#d9d9d9] 
             rounded-full h-[120px] w-[120px] 
             border-white border-[11px]
             ">
-              <View className="absolute bottom-0 right-0">
-                <BadgeCheckIcon size={28} color={"#325FFE"}/>
+              <View className="relative bottom-3 right-3 ">
+                <Image 
+                  source={{
+                  uri: profile_pic
+                  }}
+              className="   rounded-full h-[120px] w-[120px] 
+              border-white border-[11px]
+              "/>
+              </View>
+
+              <View className="absolute bottom-0 right-0 bg-white rounded-full ">
+                <BadgeCheckIcon size={30} color={"#325FFE"}/>
               </View>
           </View>
 {/* Attributes */}
@@ -87,9 +102,9 @@ const RestaurantProfile = () => {
 {/* Name, Rating, Address */}
         <View className="relative top-2 flex flex-row items-start">
           <View>
-            <Text className="text-3xl font-medium text-left">{name}</Text>
-            <Text className="text-sm font-normal text-gray-500 text-left">{short_description}</Text>
-            <Text className="text-lg font-medium text-gray-500 text-left mt-2">{}</Text>
+            <Text className="text-3xl font-medium text-left mr-4">{name}</Text>
+            <Text className="text-sm font-medium text-gray-500 text-left">{short_description}</Text>
+            <Text className="text-xl font-medium text-gray-500 text-left mt-2">{address}</Text>
           </View>
           <View className="
             flex items-start 
@@ -104,7 +119,7 @@ const RestaurantProfile = () => {
         </View>
 
 {/* Input Search field */}
-        <View className="flex-row items-center space-x-2 pb-2 pt-3 mt-5">
+        <View className="flex-row items-center space-x-2  pt-3 mt-5">
           <View className="flex-row space-x-2 flex-1 bg-[#d9d9d9] px-3 py-1 items-center rounded-xl">
               <SearchIcon color="gray" size={30}/>
               <TextInput 
@@ -118,18 +133,12 @@ const RestaurantProfile = () => {
               />
             <AdjustmentsIcon size={24} color={"#777777"} />
           </View>
+                  
         </View>
-
-        <Text className="text-xl font-medium text-left mt-4">Hits of the week</Text>
-{/* Hits of the WEek */}
-        <HitsOfTheWeekRow id={id}/>
-{/* Browse Restaurant's Menu */}
-        <Text className="text-xl font-medium text-left mt-9">Browse Restaurant's Menu</Text>
-        
         <ScrollView 
           horizontal
           showsHorizontalScrollIndicator={false}
-          className="flex flex-row mt-5">
+          className="flex flex-row mt-5 mb-6">
           
 {/* Category card  */}
           <TouchableOpacity className="fkex flex-row space-x-1 bg-[#c8c8c8] rounded-xl items-center mr-2 px-2">
@@ -144,6 +153,13 @@ const RestaurantProfile = () => {
           <FilterCard name={"Trending"} />
           <FilterCard name={"Nearest"} />
         </ScrollView>
+
+        <Text className="text-xl font-medium text-left mt-4">Hits of the week</Text>
+{/* Hits of the WEek */}
+        <HitsOfTheWeekRow id={id}/>
+{/* Browse Restaurant's Menu */}
+        <Text className="text-xl font-medium text-left mt-9">Browse Restaurant's Menu</Text>
+
         <View className="border-y border-gray-300/80 my-4 rounded"/>
 {/* Restaurant Menu */}
         <View>

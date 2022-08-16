@@ -101,6 +101,7 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
             delivery_price:"Free Delivery",
             address:"Nandos UK",
             thumbnail:"",
+            profile_pic: ""
           })} }>
             <Text className="relative bottom-3 text-left text-xl font-medium text-[#575757]">
               From {restaurant_name}

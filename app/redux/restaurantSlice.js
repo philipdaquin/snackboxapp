@@ -13,6 +13,7 @@ const initialState = {
     delivery_price: null,
     address: null,
     thumbnail: null,
+    profile_pic: null
   }
 }
 
