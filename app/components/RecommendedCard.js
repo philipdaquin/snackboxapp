@@ -27,7 +27,7 @@ const RecommendedCard = ({  id,
 
 
     // 
-      onPress={() => {navigation.navigate("DeliverySummary", {
+      onPress={() => {navigation.navigate("FoodStack", {
         id,
         name,
         description,

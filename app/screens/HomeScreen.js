@@ -64,7 +64,6 @@ const HomeScreen = () => {
       </SafeAreaView>
 
       {/* Testting purposes  */}
-      <ConfirmationButton />
     </ScrollView>
     </>
 
