@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, ScrollView, SafeAreaView, TouchableOpacity, TextInput, Image } from 'react-native'
 import React from 'react'
 import { StarIcon, MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/solid'
 import BackButton from '../components/BackButton'
@@ -56,9 +56,11 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
     <>
       <AddToCart id={id}/>
       <ScrollView className="bg-white min-h-screen pb-24">
-        <View className="h-[412px] bg-[#d9d9d9]] px-4">
+        <View className="h-[412px] bg-white ">
+        <Image source={{ uri: image }}
+            className="h-[412px]"/>
           {/* Backbutton */}
-          <View className="mt-12">
+          <View className="m-5 z-50 absolute ">
             <BackButton />
 
           </View>
@@ -69,23 +71,21 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
         <SafeAreaView className="px-4 mt-6">
 
   {/* Headers */}
-          <View className="flex flex-row items-center justify-between">
-            <View className="flex flex-row items-start space-x-2">
-              <Text className="text-3xl font-medium text-left ">{name}</Text>
-
+          <View className="flex flex-row justify-between space-x-1">
+            <Text className="text-3xl font-medium text-left w-[60%] mb-6">{name}</Text>
+            <View className="flex flex-row space-x-1 items-center realtive bottom-3">
               <View className="
                 flex items-center 
-                justify-center relative
-                h-[26px] m-3">
+                justify-center">
                 <Text className="text-black font-bold text-[14px] items-center flex ">
                     5.0
                     <StarIcon size={18} color={"#ffc107"}/> 
                     <Text className="text-[8px] text-gray-500 font-medium">{`(100+)`}</Text>
                 </Text>
               </View>
-            </View>
             {/* See ALl Reviews  */}
             <Text className="text-sm font-medium ">See all reviews</Text>
+            </View>
           </View>
           
 
@@ -109,7 +109,7 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
           </TouchableOpacity>
 
   {/* Price */}
-          <View className="flex flex-row justify-between mt-2">
+          <View className="flex flex-row justify-between">
             <View className="flex flex-row items-center space-x-4">
               <Text className="font-bold text-left text-4xl">${price}</Text>
               <Text className="text-lg flex-bold text-gray-600 line-through ">$13.00</Text>
@@ -137,7 +137,7 @@ const items = useSelector(state => select_basket_item_with_id(state, id));
           </Text>
   {/* Sizes */}
           <View className="mt-5 flex flex-row items-center justify-between">
-            <Text className="font-medium text-xl text-left">Select Size</Text>
+            <Text className="font-semibold text-xl text-left">Select Size</Text>
             
             <View className="flex flex-row space-x-3">
               <TouchableOpacity 

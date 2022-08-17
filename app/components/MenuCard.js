@@ -35,23 +35,30 @@ const MenuCard = ({
             <Text className="font-medium text-lg text-left mb-3">{name}</Text>
 {/* Price */}
             <View className="flex flex-row space-x-2 items-center">
-              <View className="px-2 py-1 rounded-lg bg-[#d9d9d9] flex flex-row justify-center ">
+              <View className="px-2 py-1 rounded-lg bg-[#e4e4e4] flex flex-row justify-center ">
                 <Text className="font-bold items-center text-sm">${price}</Text>
               </View>
 {/* Free Delivery */}
-              <View className="flex items-center justify-center px-2 h-[23px] bg-[#c8c8c8] rounded-lg">
-                <Text className="text-white font-bold text-sm">{delivery}</Text>
+              <View className="flex items-center justify-center px-2 h-[23px] bg-[#e4e4e4] rounded-lg">
+                <Text className="font-bold text-sm">{delivery}</Text>
               </View>
             </View>
-            <Text className="w-[323px] flex-shrink flex mt-2 text-gray-500 font-normal">
+            <Text className="w-[250px] flex-shrink flex mt-2 font-normal">
             {description}
           </Text>
         </View>
-        <View className="rounded-lg p-10 bg-[#d9d9d9]">
+        <View className="rounded-lg ">
 {/* <Image/>  */}
+              <Image 
+                  source={{
+                  uri: image
+                  }}
+              className="h-[101px] w-[111px]
+              "/>
         </View>
     </TouchableOpacity>
   )
 }
 
 export default MenuCard
+
