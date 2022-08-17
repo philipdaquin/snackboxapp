@@ -21,7 +21,7 @@ const LikeButton = () => {
                 <HeartIcon size={25} color={"#FF3232"}/>
 
               ) : (
-                <HeartIcon size={25} color={"#c8c8c8"}/>
+                <HeartIcon size={25} color={"#999797"}/>
                 
               )
           }
