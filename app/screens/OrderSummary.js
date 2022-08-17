@@ -1,21 +1,37 @@
 import { View, Text, ScrollView, SafeAreaView, TextInput, TextInputBase, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BackButton from '../components/BackButton'
 import UserAddress from '../components/UserAddress'
 import { TicketIcon } from 'react-native-heroicons/outline'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { select_basket_item, select_basket_total } from '../redux/basketSlice'
 import Subtotal from '../components/Subtotal'
 import CancelButton from '../components/CancelButton'
 import PaymentBar from '../components/PaymentBar'
+import { selectRestaurant } from '../redux/restaurantSlice'
 
 const OrderSummary = () => {
   const items = useSelector(select_basket_item)
   const total_basket = useSelector(select_basket_total)
+  const restaurant = useSelector(selectRestaurant)
+
+  const dispatch = useDispatch()
+  const [groupItemsBasket, setGroupItemsBasket] = useState([])
+
+  useEffect(() => { 
+    const grouped_items = items.reduce((results, items) => { 
+      (results[items.id] = results[items.id] || []).push(items);
+      return results
+    }, {} );
+    setGroupItemsBasket(grouped_items);
+  }, [items])
+
+  console.log(groupItemsBasket)
+
 
   return (
     <>
-        <PaymentBar />
+      <PaymentBar />
 
       <ScrollView className="bg-white min-h-white">
         <SafeAreaView className="pt-16 px-5 pb-[200px]">
@@ -34,79 +50,70 @@ const OrderSummary = () => {
               <View className="border-y border-gray-300/80 my-2 rounded"/>
             </View>
 
-            <View className="flex flex-row space-x-6 items-center mt-3">
-              <View className="p-12 bg-[#d9d9d9] rounded-lg"></View>
+            <View className="flex flex-row space-x-6 items-start mt-3">
+                <Image 
+                  source={{
+                  uri: restaurant?.profile_pic
+                  }}
+                className="h-[86px] w-[91px] rounded-lg mb-1
+                "/>
               <View className="space-y-1">
-                <Text className="text-xl font-medium text-left">Restaurant Name</Text>
-                <Text>Restaurant's Full Address</Text>
-                <Text>Restaurant's Full Address</Text>
+                <Text className="text-xl font-medium text-left">{restaurant?.name}</Text>
+                <Text>{restaurant?.address}</Text>
               </View>
             </View>
           </View>
   {/* You Order */}
-          <Text className="text-left font-medium text-xl">Your Order</Text>
+          <Text className="text-left font-semibold text-xl mt-2">Your Order</Text>
           <View className="border-y border-gray-300/80 my-2 rounded"/>
-          <ScrollView>
-            <View className="flex flex-row justify-between items-center mt-4">
-              <View className="flex flex-row space-x-4 items-center">
-                <Text className="text-left font-medium text-base">1x</Text>
-                <View className="p-10 bg-[#d9d9d9] rounded-lg"></View>
-                <View className="space-y-1">
-                  <Text className="text-left font-medium text-base">Chicken Nuggets</Text>
-                  <Text>Chicken & Sauces</Text>
-                </View>
-              </View>
-              <Text className="text-lg font-medium text-left">
-                $12.99
-              </Text>
-            </View>
-            <View className="flex flex-row justify-between items-center mt-4">
-              <View className="flex flex-row space-x-4 items-center">
-                <Text className="text-left font-medium text-base">1x</Text>
-                <View className="p-10 bg-[#d9d9d9] rounded-lg"></View>
-                <View className="space-y-1">
-                  <Text className="text-left font-medium text-base">Chicken Nuggets</Text>
-                  <Text>Chicken & Sauces</Text>
-                </View>
-              </View>
-              <Text className="text-lg font-medium text-left">
-                $12.99
-              </Text>
-            </View>
-            <View className="flex flex-row justify-between items-center mt-4">
-              <View className="flex flex-row space-x-4 items-center">
-                <Text className="text-left font-medium text-base">1x</Text>
-                <View className="p-10 bg-[#d9d9d9] rounded-lg"></View>
-                <View className="space-y-1">
-                  <Text className="text-left font-medium text-base">Chicken Nuggets</Text>
-                  <Text>Chicken & Sauces</Text>
-                </View>
-              </View>
-              <Text className="text-lg font-medium text-left">
-                $12.99
-              </Text>
-            </View>
+          <ScrollView className="divide-y divide-gray-200">{
+            Object.entries(groupItemsBasket).map(([key, items]) => ( 
+              <View className="flex flex-row justify-between items-center mt-4">
+                <View className="flex flex-row space-x-4 items-center">
+                  <Text className="text-left font-medium text-base">{items.length}x</Text>
+                  
+                  <Image 
+                    source={{
+                    uri: items[0]?.image
+                    }}
+                    className="h-[74px] w-[75px] rounded-lg "/>
 
-            <Text className="text-left font-medium text-sm mt-3">Additional Requirements:</Text>
-            <View className="flex py-2 justify-between flex-row rounded-lg bg-[#f3f3f3] px-2 mt-2">
-              <View className="items-center flex flex-row space-x-1 relative left-1 ">
-              <TextInput 
-                  style={
-                    {
-                      outlineStyle: 'none'
-                    }
-                  }
-                  underlineColorAndroid={'transparent'}
-                  caretHidden={true}
-                  textAlign='left'
-                  textBreakStrategy='balanced'
-                  multiline={true}
-                  className=" h-[38px] w-[395px] flex flex-grow "
-                  placeholder='Add Special Request Here!'/>
+
+                  <View className="space-y-1">
+                    <Text className="text-left font-medium text-base">{items[0]?.name}</Text>
+                    <Text>Chicken & Sauces</Text>
+                  </View>
+                </View>
+                <Text className="text-lg font-medium text-left">
+                  {items[0]?.price}
+                </Text>
               </View>
+            ))
+          }
+
+           
+
+          </ScrollView>
+
+          <Text className="text-left font-medium text-sm mt-3">Additional Requirements:</Text>
+          <View className="flex py-2 justify-between flex-row rounded-lg bg-[#f3f3f3] px-2 mt-2">
+            <View className="items-center flex flex-row space-x-1 relative left-1 ">
+            <TextInput 
+                style={
+                  {
+                    outlineStyle: 'none'
+                  }
+                }
+                underlineColorAndroid={'transparent'}
+                caretHidden={true}
+                textAlign='left'
+                textBreakStrategy='balanced'
+                multiline={true}
+                className=" h-[38px] w-[395px] flex flex-grow "
+                placeholder='Add Special Request Here!'/>
+            </View>
           </View>
           <View className="border-y border-gray-300/80 my-4 rounded"/>
-          </ScrollView>
           <View className="mt-3">
             <View>
               <Text className="font-medium text-lg text-left">Cost Summary</Text>

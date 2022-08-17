@@ -36,7 +36,7 @@ const Subtotal = ({
               <View className="justify-between flex flex-row align-bottom">
 
                 <View className="space-x-1 items-center flex flex-row ">
-                  <Text className="font-medium text-2xl text-left">Total</Text>
+                  <Text className="font-semibold text-2xl text-left">Total</Text>
                   <Text className="text-gray-400 text-xs font-medium">(incl. VAT)</Text>
                 </View>
 

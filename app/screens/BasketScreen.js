@@ -66,15 +66,20 @@ const BasketScreen = () => {
             {
               Object.entries(groupItemsBasket).map(([key, items]) => ( 
                
-                  <View key={key} className="mb-4 flex flex-row justify-between">
+                  <View key={key} className="mb-4 flex flex-row justify-between flex-shrink ">
                       
                       <View className="flex flex-row space-x-3 items-center">
-                          <View className="bg-[#d9d9d9] h-[61px] w-[61px] rounded-lg ">
-                              {/* Image */}
+                          <View className="rounded-lg ">
+                            <Image 
+                                source={{
+                                uri: items[0]?.image
+                                }}
+                            className="h-[61px] w-[61px]
+                            "/>
                           </View>
                           
-                          <View>
-                              <Text className="font-medium text-lg text-left">{items[0]?.name}</Text>
+                          <View className="w-[80%]">
+                              <Text className="font-medium text-lg text-left ">{items[0]?.name}</Text>
                               <Text className="text-sm font-medium text-gray-500 text-left">{items[0]?.price}</Text>
                           </View>
                       </View>
