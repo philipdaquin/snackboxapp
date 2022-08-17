@@ -154,11 +154,11 @@ const RestaurantProfile = () => {
           <FilterCard name={"Nearest"} />
         </ScrollView>
 
-        <Text className="text-xl font-medium text-left mt-4">Hits of the week</Text>
+        <Text className="text-2xl font-semibold text-left mt-4">Hits of the week</Text>
 {/* Hits of the WEek */}
         <HitsOfTheWeekRow id={id}/>
 {/* Browse Restaurant's Menu */}
-        <Text className="text-xl font-medium text-left mt-9">Browse Restaurant's Menu</Text>
+        <Text className="text-2xl font-semibold text-left mt-9">Browse Restaurant's Menu</Text>
 
         <View className="border-y border-gray-300/80 my-4 rounded"/>
 {/* Restaurant Menu */}
