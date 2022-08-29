@@ -9,7 +9,7 @@ A delivery app that connects busy people with nearby restaurants, fast food and 
 
 ##### As a disclaimer, this is UX and UI project to showcase how an idea can become a potential product.  There is no backend services (as of yet ;))
 
-##### Want to what it looks like? 
+##### Want to see what it looks like? 
 https://www.figma.com/proto/2oCWhebWoDcSmnxrDH8rDM/Food-Delivery-App?page-id=0%3A1&node-id=235%3A9&viewport=779%2C242%2C0.03&scaling=scale-down&starting-point-node-id=235%3A9
 
 ## Role and Duration 
