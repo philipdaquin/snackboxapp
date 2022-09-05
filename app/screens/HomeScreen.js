@@ -23,12 +23,12 @@ const HomeScreen = () => {
     <>
     <BasketIcon />
 
-    <ScrollView className="bg-white min-h-screen">
+    <ScrollView className="bg-white min-h-screen ">
       <SafeAreaView className="px-4 pt-16">
           {/* User Address bar */}
           <View className="">
             <UserAddress />
-            <Text className="font-medium text-[47px]  font-['Helvetica Neue']">Good morning,<br/>John👋</Text>
+            <Text className="font-medium text-[47px] ">Good morning,<br/>John👋</Text>
             <Text className="text-left text-lg font-medium mt-6">Ready to make your first order today?</Text>
           </View>
           <View className="border-y border-gray-300/80 my-4 rounded"/>

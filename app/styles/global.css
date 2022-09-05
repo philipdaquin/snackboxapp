@@ -5,7 +5,13 @@
 @tailwind utilities;
 
 
-@font-helvetica { 
-    font-family: "helvetica";
-    src: url('../assets/fonts/HelveticaNowDisplay-Bold')
-}
+@layer base {
+    @font-face {
+      font-family: 'Helvetica-Regular';
+      src: url('/assets/fonts/Helvetica-Regular.woff2') format('woff2');
+      /* font-weight: 400; */
+      font-display: swap;
+      font-style: normal;
+    }
+  }
+  

@@ -8,7 +8,7 @@ module.exports = {
     theme: {
       extend: {
         fontFamily: {
-          body: ['HelveticaNowDisplay']
+          helvetica: 'Helvetica-Regular, regular'
         },
       },
       boxShadow: {
